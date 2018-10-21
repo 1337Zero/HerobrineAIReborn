@@ -25,6 +25,6 @@ Original Idea
 The original Idea is from:
 
 ```
-https://github.com/jakub1221/HerobrineAI
+[HerobrineAI](https://github.com/jakub1221/HerobrineAI)
 ```
 
