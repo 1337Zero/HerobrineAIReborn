@@ -10,7 +10,6 @@ This is an old project and there are some parts of code that are poorly written,
 
 Building
 ---------
-**Maven with jdk7+ is required**
 
 **1. Clone project**  
 ```
