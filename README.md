@@ -1,6 +1,4 @@
 # HerobrineAI
-[![Build Status](http://jenkins.logicshard.com/buildStatus/icon?job=HerobrineAI)](http://jenkins.logicshard.com/job/HerobrineAI/)
-
 =========
 
 HerobrineAI is server-side bukkit plugin for Minecraft that creates Herobrine with custom AI and skin.  
