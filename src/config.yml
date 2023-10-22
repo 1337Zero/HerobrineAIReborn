@@ -1,0 +1,128 @@
+config:
+  ShowInterval: 144000
+  ShowRate: 2
+  HitPlayer: true
+  SendMessages: true
+  Lighting: false
+  DestroyTorches: true
+  DestroyTorchesRadius: 5
+  useWorlds:
+  - world
+  TotemExplodes: true
+  OnlyWalkingMode: false
+  BuildStuff: true
+  PlaceSigns: true
+  UseTotem: true
+  WriteBooks: true
+  Killable: true
+  UsePotionEffects: true
+  CaveChance: 40
+  BookChance: 5
+  SignChance: 5
+  WalkingModeXRadius: 1000
+  WalkingModeZRadius: 1000
+  DeathMessage: Du wirst mich niemals töten!
+  Messages:
+  - Selbst Notch könnte dich nicht retten!
+  - Habe Angst vor mir!
+  - Willkommen in meiner verfluchten Welt!
+  - Ich bin dein Tod!
+  - Dein Grab wartet!
+  SignMessages:
+  - Ich sehe dich...
+  - Tod...
+  - Augen in der Dunkelheit...
+  BookMessages:
+  - Weiße Augen in der Dunkelheit...
+  - '... war das letzte was ich gesehen habe ...'
+  - '... bevor ich gestorben bin.'
+  Drops:
+    '264':
+      count: 1
+      chance: 20
+  BuildPyramids: false
+  UseGraveyardWorld: true
+  BuryPlayers: false
+  SpawnWolves: false
+  SpawnBats: true
+  UseWalkingMode: true
+  WalkingModeRadius:
+    X: 1000
+    Z: 1000
+    FromX: 0
+    FromZ: 0
+  BuildInterval: 72000
+  BuildTemples: false
+  UseArtifacts:
+    Bow: true
+    Sword: true
+    Apple: true
+  HerobrineHP: 500
+  AttackCreative: true
+  AttackOP: true
+  SecuredArea:
+    Build: true
+    Attack: true
+    Haunt: true
+    Signs: true
+    Books: true
+  UseHeads: true
+  UseCustomItems: false
+  CustomItemsList:
+  - ItemExample
+  UseAncientSword: true
+  UseNPC:
+    Guardian: true
+    Warrior: true
+    Demon: true
+  npc:
+    Guardian:
+      SpawnCount: 1
+      HP: 40
+      Speed: 0.3
+      Drops:
+        1: 
+          ID: 283
+          Chance: 40
+          Count: 1
+        2: 
+          ID: 286
+          Chance: 30
+          Count: 1
+    Warrior:
+      SpawnChance: 4
+      HP:  40
+      Speed: 0.3
+      Drops:
+        1:
+          ID: 307
+          Chance: 25
+          Count: 1
+        2:
+          ID: 306
+          Chance: 20
+          Count: 1
+    Demon:
+      SpawnChance: 4
+      HP: 40
+      Speed: 0.3
+      Drops:
+        1:
+          ID: 322
+          Chance: 40
+          Count: 1
+        2:
+          ID: 397
+          Chance: 20
+          Count: 1
+  ItemInHand: 'AIR'
+  Explosions: true
+  Burn: true
+  Curse: true
+  Limit:
+    Books: 1
+    Signs: 1
+    Heads: 1
+  UseIgnorePermission: true
+  HerobrineUUID: f84c6a79-0a4e-45e0-879b-cd49ebd4c4e2
+  HerobrineName: Herobrine

@@ -30,7 +30,7 @@ public class Heads extends Core {
 			if (Bukkit.getPlayer((String) data[0]).isOnline()) {
 				Player player = (Player) Bukkit.getServer().getPlayer((String) data[0]);
 				if (PluginCore.getSupport().checkBuild(player.getLocation())) {
-					if (PluginCore.getConfigDB().UseHeads) {
+					if (HerobrineAI.getPluginCore().config.getBoolean("config.UseHeads")) {
 
 						Location loc = player.getLocation();
 						int px = loc.getBlockX();
@@ -52,7 +52,7 @@ public class Heads extends Core {
 									}
 
 									Block block = loc.getWorld().getBlockAt(px + x, y, pz + z);
-									BlockChanger.PlaceSkull(block.getLocation(), "Herobrine");
+									BlockChanger.PlaceHeroBrineSkull(block.getLocation());
 
 									headList.add(block);
 

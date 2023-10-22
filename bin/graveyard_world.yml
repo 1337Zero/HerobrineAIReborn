@@ -3,3636 +3,3056 @@ DATA:
     X: 3
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '1':
     X: 3
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '2':
     X: 3
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '3':
     X: 3
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '4':
     X: 2
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '5':
     X: 2
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '6':
     X: 2
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '7':
     X: 2
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '8':
     X: 2
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '9':
     X: 2
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '10':
     X: 7
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '11':
     X: 7
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '12':
     X: 7
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '13':
     X: 6
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '14':
     X: 2
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '15':
     X: 2
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '16':
     X: 2
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '17':
     X: 2
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '18':
     X: 2
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '19':
     X: 2
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '20':
     X: 2
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '21':
     X: 2
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '22':
     X: 2
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '23':
     X: 2
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '24':
     X: 6
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '25':
     X: 6
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '26':
     X: 6
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '27':
     X: 5
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '28':
     X: 5
     Y: 1
     Z: 18
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '29':
     X: 2
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '30':
     X: 5
     Y: 1
     Z: 14
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '31':
     X: 2
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '32':
     X: 5
     Y: 1
     Z: 10
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '33':
     X: 2
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '34':
     X: 5
     Y: 1
     Z: 6
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '35':
     X: 2
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '36':
     X: 5
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 1
+    ID: STONE_BRICKS
   '37':
     X: 2
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '38':
     X: 2
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '39':
     X: 1
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '40':
     X: 1
     Y: 0
     Z: 20
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '41':
     X: 1
     Y: 0
     Z: 19
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '42':
     X: 1
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '43':
     X: 5
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '44':
     X: 5
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '45':
     X: 4
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '46':
     X: 4
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 1
+    ID: STONE_BRICKS
   '47':
     X: 4
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '48':
     X: 4
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '49':
     X: 1
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '50':
     X: 3
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '51':
     X: 1
     Y: 0
     Z: 16
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '52':
     X: 3
     Y: 1
     Z: 18
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '53':
     X: 1
     Y: 0
     Z: 15
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '54':
     X: 3
     Y: 1
     Z: 14
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '55':
     X: 1
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '56':
     X: 3
     Y: 1
     Z: 10
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '57':
     X: 1
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '58':
     X: 1
     Y: 0
     Z: 12
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '59':
     X: 1
     Y: 0
     Z: 11
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '60':
     X: 1
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '61':
     X: 1
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '62':
     X: 1
     Y: 0
     Z: 8
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '63':
     X: 3
     Y: 1
     Z: 6
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '64':
     X: 3
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '65':
     X: 3
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '66':
     X: 3
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '67':
     X: 2
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '68':
     X: 2
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '69':
     X: 1
     Y: 0
     Z: 7
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '70':
     X: 2
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '71':
     X: 1
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '72':
     X: 2
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '73':
     X: 1
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '74':
     X: 1
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '75':
     X: 1
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '76':
     X: 1
     Y: 1
     Z: 18
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '77':
     X: 1
     Y: 0
     Z: 3
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '78':
     X: 1
     Y: 0
     Z: 2
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '79':
     X: 1
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '80':
     X: 1
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '81':
     X: 0
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '82':
     X: 0
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '83':
     X: 1
     Y: 1
     Z: 14
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '84':
     X: 1
     Y: 1
     Z: 10
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '85':
     X: 1
     Y: 1
     Z: 6
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '86':
     X: 1
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '87':
     X: 1
     Y: 1
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '88':
     X: 1
     Y: 1
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '89':
     X: 0
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '90':
     X: 1
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '91':
     X: 0
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '92':
     X: 1
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '93':
     X: 0
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '94':
     X: 0
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '95':
     X: 0
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '96':
     X: 0
     Y: 1
     Z: 20
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '97':
     X: 0
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '98':
     X: 0
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '99':
     X: 0
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '100':
     X: 0
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '101':
     X: 0
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '102':
     X: 0
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '103':
     X: 0
     Y: 1
     Z: 19
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '104':
     X: 0
     Y: 1
     Z: 18
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '105':
     X: 0
     Y: 1
     Z: 17
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '106':
     X: 0
     Y: 1
     Z: 16
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '107':
     X: 0
     Y: 1
     Z: 15
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '108':
     X: 0
     Y: 1
     Z: 14
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '109':
     X: 0
     Y: 1
     Z: 13
-    ID: 85
-    DATA: 0
-  '110':
+    ID: OAK_FENCE
+  '108':
     X: 0
     Y: 1
     Z: 12
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '111':
     X: 0
     Y: 1
     Z: 11
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '112':
     X: 0
     Y: 1
     Z: 10
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '113':
     X: 0
     Y: 1
     Z: 9
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '114':
     X: 0
     Y: 1
     Z: 8
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '115':
     X: 0
     Y: 1
     Z: 7
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '116':
     X: 0
     Y: 1
     Z: 6
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '117':
     X: 0
     Y: 1
     Z: 5
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '118':
     X: 0
     Y: 1
     Z: 4
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '119':
     X: 0
     Y: 1
     Z: 3
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '120':
     X: 0
     Y: 1
     Z: 2
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '121':
     X: 0
     Y: 1
     Z: 1
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '122':
     X: 0
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '123':
     X: 14
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '124':
     X: 14
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '125':
     X: 14
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '126':
     X: 14
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '127':
     X: 14
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '128':
     X: 14
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '129':
     X: 14
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '130':
     X: 14
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '131':
     X: 14
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '132':
     X: 14
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '133':
     X: 14
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '134':
     X: 14
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '135':
     X: 14
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '136':
     X: 14
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '137':
     X: 14
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '138':
     X: 14
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '139':
     X: 14
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '140':
     X: 14
     Y: 0
     Z: 4
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '141':
     X: 14
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '142':
     X: 14
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '143':
     X: 14
     Y: 0
     Z: 1
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '144':
     X: 14
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '145':
     X: 13
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '146':
     X: 13
     Y: 0
     Z: 20
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '147':
     X: 13
     Y: 0
     Z: 19
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '148':
     X: 13
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '149':
     X: 13
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '150':
     X: 13
     Y: 0
     Z: 16
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '151':
     X: 13
     Y: 0
     Z: 15
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '152':
     X: 13
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '153':
     X: 9
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '154':
     X: 9
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '155':
     X: 8
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '156':
     X: 8
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '157':
     X: 8
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '158':
     X: 8
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '159':
     X: 8
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '160':
     X: 8
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '161':
     X: 8
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '162':
     X: 8
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '163':
     X: 8
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '164':
     X: 8
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '165':
     X: 8
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '166':
     X: 8
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '167':
     X: 8
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '168':
     X: 8
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '169':
     X: 8
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '170':
     X: 8
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '171':
     X: 8
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '172':
     X: 8
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '173':
     X: 8
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '174':
     X: 8
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '175':
     X: 8
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '176':
     X: 8
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '177':
     X: 7
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '178':
     X: 7
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '179':
     X: 7
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '180':
     X: 7
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '181':
     X: 7
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '182':
     X: 7
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '183':
     X: 13
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '184':
     X: 13
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '185':
     X: 13
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '186':
     X: 12
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '187':
     X: 12
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '188':
     X: 12
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '189':
     X: 7
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '190':
     X: 7
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '191':
     X: 7
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '192':
     X: 7
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '193':
     X: 7
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '194':
     X: 7
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '195':
     X: 7
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '196':
     X: 7
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '197':
     X: 7
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '198':
     X: 7
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '199':
     X: 7
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '200':
     X: 7
     Y: 0
     Z: 4
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '201':
     X: 7
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '202':
     X: 7
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '203':
     X: 7
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '204':
     X: 7
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '205':
     X: 6
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '206':
     X: 6
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '207':
     X: 6
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '208':
     X: 6
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '209':
     X: 6
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '210':
     X: 6
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '211':
     X: 6
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '212':
     X: 6
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '213':
     X: 6
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '214':
     X: 6
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '215':
     X: 6
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '216':
     X: 6
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '217':
     X: 6
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '218':
     X: 6
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '219':
     X: 6
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '220':
     X: 6
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '221':
     X: 13
     Y: 2
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '222':
     X: 6
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '223':
     X: 13
     Y: 2
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '224':
     X: 6
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '225':
     X: 13
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '226':
     X: 6
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '227':
     X: 12
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '228':
     X: 6
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '229':
     X: 6
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '230':
     X: 11
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '231':
     X: 6
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '232':
     X: 10
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '233':
     X: 5
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '234':
     X: 10
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '235':
     X: 5
     Y: 0
     Z: 20
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '236':
     X: 9
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '237':
     X: 9
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '238':
     X: 5
     Y: 0
     Z: 19
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '239':
     X: 5
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '240':
     X: 8
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '241':
     X: 5
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '242':
     X: 8
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '243':
     X: 5
     Y: 0
     Z: 16
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '244':
     X: 5
     Y: 0
     Z: 15
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '245':
     X: 7
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '246':
     X: 5
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '247':
     X: 6
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '248':
     X: 5
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '249':
     X: 6
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '250':
     X: 5
     Y: 0
     Z: 12
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '251':
     X: 5
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 1
+    ID: STONE_BRICKS
   '252':
     X: 5
     Y: 0
     Z: 11
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '253':
     X: 5
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '254':
     X: 5
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '255':
     X: 4
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '256':
     X: 4
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '257':
     X: 5
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '258':
     X: 5
     Y: 0
     Z: 8
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '259':
     X: 5
     Y: 0
     Z: 7
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '260':
     X: 3
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '261':
     X: 5
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '262':
     X: 2
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '263':
     X: 5
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '264':
     X: 1
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '265':
     X: 5
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '266':
     X: 1
     Y: 2
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '267':
     X: 5
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '268':
     X: 1
     Y: 2
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '269':
     X: 5
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '270':
     X: 1
     Y: 2
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '271':
     X: 5
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '272':
     X: 5
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '273':
     X: 4
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '274':
     X: 4
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '275':
     X: 4
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '276':
     X: 4
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '277':
     X: 4
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '278':
     X: 14
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '279':
     X: 4
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '280':
     X: 14
     Y: 1
     Z: 20
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '281':
     X: 4
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '282':
     X: 14
     Y: 1
     Z: 19
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '283':
     X: 4
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '284':
     X: 14
     Y: 1
     Z: 18
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '285':
     X: 4
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '286':
     X: 14
     Y: 1
     Z: 17
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '287':
     X: 4
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '288':
     X: 14
     Y: 1
     Z: 16
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '289':
     X: 14
     Y: 1
     Z: 15
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '290':
     X: 14
     Y: 1
     Z: 14
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '291':
     X: 14
     Y: 1
     Z: 13
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '292':
     X: 14
     Y: 1
     Z: 12
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '293':
     X: 14
     Y: 1
     Z: 11
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '294':
     X: 14
     Y: 1
     Z: 10
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '295':
     X: 14
     Y: 1
     Z: 9
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '296':
     X: 14
     Y: 1
     Z: 8
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '297':
     X: 14
     Y: 1
     Z: 7
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '298':
     X: 14
     Y: 1
     Z: 6
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '299':
     X: 14
     Y: 1
     Z: 5
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '300':
     X: 14
     Y: 1
     Z: 4
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '301':
     X: 14
     Y: 1
     Z: 3
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '302':
     X: 14
     Y: 1
     Z: 2
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '303':
     X: 14
     Y: 1
     Z: 1
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '304':
     X: 14
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '305':
     X: 13
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '306':
     X: 13
     Y: 1
     Z: 18
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '307':
     X: 13
     Y: 1
     Z: 14
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '308':
     X: 13
     Y: 1
     Z: 10
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '309':
     X: 13
     Y: 1
     Z: 6
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '310':
     X: 13
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '311':
     X: 13
     Y: 1
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '312':
     X: 13
     Y: 1
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '313':
     X: 13
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '314':
     X: 13
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '315':
     X: 12
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '316':
     X: 12
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '317':
     X: 12
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '318':
     X: 12
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '319':
     X: 11
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '320':
     X: 11
     Y: 1
     Z: 18
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '321':
     X: 11
     Y: 1
     Z: 14
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '322':
     X: 11
     Y: 1
     Z: 10
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '323':
     X: 11
     Y: 1
     Z: 6
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '324':
     X: 11
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '325':
     X: 11
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '326':
     X: 11
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '327':
     X: 10
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '328':
     X: 10
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 1
+    ID: STONE_BRICKS
   '329':
     X: 10
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '330':
     X: 10
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '331':
     X: 9
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '332':
     X: 9
     Y: 1
     Z: 18
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '333':
     X: 9
     Y: 1
     Z: 14
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '334':
     X: 9
     Y: 1
     Z: 10
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '335':
     X: 9
     Y: 1
     Z: 6
-    ID: 63
-    DATA: 0
+    ID: OAK_SIGN
   '336':
     X: 9
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '337':
     X: 9
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '338':
     X: 9
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '339':
     X: 8
     Y: 1
     Z: 21
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '340':
     X: 8
     Y: 1
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '341':
     X: 8
     Y: 1
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '342':
     X: 8
     Y: 1
     Z: 0
-    ID: 85
-    DATA: 0
+    ID: OAK_FENCE
   '343':
     X: 13
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '344':
     X: 13
     Y: 0
     Z: 12
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '345':
     X: 13
     Y: 0
     Z: 11
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '346':
     X: 13
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '347':
     X: 13
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '348':
     X: 13
     Y: 0
     Z: 8
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '349':
     X: 13
     Y: 0
     Z: 7
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '350':
     X: 13
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '351':
     X: 13
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '352':
     X: 13
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '353':
     X: 13
     Y: 0
     Z: 3
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '354':
     X: 13
     Y: 0
     Z: 2
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '355':
     X: 13
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '356':
     X: 13
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '357':
     X: 12
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '358':
     X: 12
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '359':
     X: 12
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '360':
     X: 12
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '361':
     X: 12
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '362':
     X: 12
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '363':
     X: 12
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '364':
     X: 12
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '365':
     X: 12
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '366':
     X: 12
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '367':
     X: 12
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '368':
     X: 12
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '369':
     X: 12
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '370':
     X: 12
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '371':
     X: 12
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '372':
     X: 12
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '373':
     X: 12
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '374':
     X: 12
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '375':
     X: 12
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '376':
     X: 12
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '377':
     X: 12
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '378':
     X: 12
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '379':
     X: 11
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '380':
     X: 11
     Y: 0
     Z: 20
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '381':
     X: 11
     Y: 0
     Z: 19
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '382':
     X: 11
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '383':
     X: 11
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '384':
     X: 11
     Y: 0
     Z: 16
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '385':
     X: 11
     Y: 0
     Z: 15
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '386':
     X: 11
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '387':
     X: 11
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '388':
     X: 11
     Y: 0
     Z: 12
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '389':
     X: 11
     Y: 0
     Z: 11
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '390':
     X: 11
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '391':
     X: 11
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '392':
     X: 11
     Y: 0
     Z: 8
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '393':
     X: 0
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '394':
     X: 0
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '395':
     X: 0
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '396':
     X: 0
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '397':
     X: 0
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '398':
     X: 0
     Y: 0
     Z: 4
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '399':
     X: 0
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '400':
     X: 0
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '401':
     X: 0
     Y: 0
     Z: 1
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '402':
     X: 0
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '403':
     X: 11
     Y: 0
     Z: 7
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '404':
     X: 11
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '405':
     X: 11
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '406':
     X: 11
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '407':
     X: 11
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '408':
     X: 11
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '409':
     X: 11
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '410':
     X: 11
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '411':
     X: 10
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '412':
     X: 10
     Y: 0
     Z: 20
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '413':
     X: 10
     Y: 0
     Z: 19
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '414':
     X: 10
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '415':
     X: 11
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '416':
     X: 10
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '417':
     X: 11
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '418':
     X: 10
     Y: 0
     Z: 16
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '419':
     X: 11
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '420':
     X: 10
     Y: 0
     Z: 15
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '421':
     X: 10
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '422':
     X: 10
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '423':
     X: 10
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '424':
     X: 10
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '425':
     X: 10
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '426':
     X: 10
     Y: 0
     Z: 12
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '427':
     X: 9
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '428':
     X: 10
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '429':
     X: 9
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '430':
     X: 10
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '431':
     X: 9
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '432':
     X: 8
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '433':
     X: 10
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '434':
     X: 10
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '435':
     X: 8
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '436':
     X: 10
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '437':
     X: 8
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '438':
     X: 10
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '439':
     X: 7
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '440':
     X: 10
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '441':
     X: 7
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '442':
     X: 10
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '443':
     X: 7
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '444':
     X: 10
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '445':
     X: 6
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '446':
     X: 10
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '447':
     X: 6
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '448':
     X: 10
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '449':
     X: 6
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '450':
     X: 10
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '451':
     X: 5
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '452':
     X: 5
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '453':
     X: 9
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '454':
     X: 9
     Y: 0
     Z: 20
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '455':
     X: 5
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '456':
     X: 9
     Y: 0
     Z: 19
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '457':
     X: 4
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '458':
     X: 9
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '459':
     X: 4
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '460':
     X: 9
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '461':
     X: 4
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '462':
     X: 9
     Y: 0
     Z: 16
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '463':
     X: 3
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '464':
     X: 9
     Y: 0
     Z: 15
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '465':
     X: 3
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '466':
     X: 9
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '467':
     X: 3
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '468':
     X: 9
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '469':
     X: 2
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '470':
     X: 9
     Y: 0
     Z: 12
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '471':
     X: 2
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '472':
     X: 2
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '473':
     X: 9
     Y: 0
     Z: 11
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '474':
     X: 9
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '475':
     X: 1
     Y: 5
     Z: 3
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '476':
     X: 9
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '477':
     X: 1
     Y: 5
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '478':
     X: 9
     Y: 0
     Z: 8
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '479':
     X: 1
     Y: 5
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '480':
     X: 9
     Y: 0
     Z: 7
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '481':
     X: 13
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '482':
     X: 9
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '483':
     X: 13
     Y: 4
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '484':
     X: 9
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '485':
     X: 13
     Y: 4
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '486':
     X: 9
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '487':
     X: 13
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '488':
     X: 9
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '489':
     X: 12
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '490':
     X: 9
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '491':
     X: 12
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '492':
     X: 11
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '493':
     X: 11
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '494':
     X: 10
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '495':
     X: 10
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '496':
     X: 9
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '497':
     X: 9
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '498':
     X: 8
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '499':
     X: 8
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '500':
     X: 7
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '501':
     X: 7
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '502':
     X: 6
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '503':
     X: 6
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '504':
     X: 5
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '505':
     X: 5
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '506':
     X: 4
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '507':
     X: 4
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '508':
     X: 3
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '509':
     X: 3
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '510':
     X: 2
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '511':
     X: 2
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '512':
     X: 1
     Y: 4
     Z: 4
-    ID: 53
+    ID: OAK_STAIRS
     DATA: 3
   '513':
     X: 1
     Y: 4
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '514':
     X: 1
     Y: 4
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '515':
     X: 1
     Y: 4
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '516':
     X: 13
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '517':
     X: 13
     Y: 3
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '518':
     X: 13
     Y: 3
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '519':
     X: 13
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '520':
     X: 12
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '521':
     X: 12
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '522':
     X: 11
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '523':
     X: 11
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '524':
     X: 10
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '525':
     X: 10
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '526':
     X: 9
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 1
+    ID: STONE_BRICKS
   '527':
     X: 9
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '528':
     X: 8
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 1
+    ID: STONE_BRICKS
   '529':
     X: 8
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '530':
     X: 7
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '531':
     X: 7
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '532':
     X: 6
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '533':
     X: 6
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '534':
     X: 5
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '535':
     X: 5
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '536':
     X: 4
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 1
+    ID: STONE_BRICKS
   '537':
     X: 4
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '538':
     X: 3
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '539':
     X: 3
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '540':
     X: 2
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '541':
     X: 2
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '542':
     X: 1
     Y: 3
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '543':
     X: 4
     Y: 0
     Z: 11
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '544':
     X: 4
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '545':
     X: 4
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '546':
     X: 4
     Y: 0
     Z: 8
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '547':
     X: 4
     Y: 0
     Z: 7
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '548':
     X: 4
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '549':
     X: 4
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '550':
     X: 4
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '551':
     X: 4
     Y: 0
     Z: 3
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '552':
     X: 4
     Y: 0
     Z: 2
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '553':
     X: 1
     Y: 3
     Z: 3
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '554':
     X: 1
     Y: 3
     Z: 2
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '555':
     X: 1
     Y: 3
     Z: 1
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '556':
     X: 13
     Y: 2
     Z: 4
-    ID: 98
-    DATA: 0
+    ID: STONE_BRICKS
   '557':
     X: 4
     Y: 0
     Z: 1
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '558':
     X: 4
     Y: 0
     Z: 0
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '559':
     X: 3
     Y: 0
     Z: 21
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '560':
     X: 3
     Y: 0
     Z: 20
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '561':
     X: 3
     Y: 0
     Z: 19
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '562':
     X: 3
     Y: 0
     Z: 18
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '563':
     X: 3
     Y: 0
     Z: 17
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '564':
     X: 3
     Y: 0
     Z: 16
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '565':
     X: 3
     Y: 0
     Z: 15
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '566':
     X: 3
     Y: 0
     Z: 14
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '567':
     X: 3
     Y: 0
     Z: 13
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '568':
     X: 3
     Y: 0
     Z: 12
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '569':
     X: 3
     Y: 0
     Z: 11
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '570':
     X: 3
     Y: 0
     Z: 10
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '571':
     X: 3
     Y: 0
     Z: 9
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '572':
     X: 3
     Y: 0
     Z: 8
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '573':
     X: 3
     Y: 0
     Z: 7
-    ID: 98
-    DATA: 2
+    ID: STONE_BRICKS
   '574':
     X: 3
     Y: 0
     Z: 6
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '575':
     X: 3
     Y: 0
     Z: 5
-    ID: 110
-    DATA: 0
+    ID: MYCELIUM
   '576':
     X: 3
     Y: 0
     Z: 4
-    ID: 3
-    DATA: 0
+    ID: DIRT
   '577':
     X: 7
     Y: 2
     Z: 21
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '578':
     X: 8
     Y: 1
     Z: 17
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '579':
     X: 8
     Y: 1
     Z: 15
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '580':
     X: 8
     Y: 1
     Z: 13
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '581':
     X: 0
     Y: 2
     Z: 11
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '582':
     X: 8
     Y: 1
     Z: 11
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '583':
     X: 0
     Y: 2
     Z: 8
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '584':
     X: 8
     Y: 1
     Z: 9
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '585':
     X: 0
     Y: 2
     Z: 5
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '586':
     X: 8
     Y: 1
     Z: 7
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '587':
     X: 8
     Y: 1
     Z: 5
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '588':
     X: 11
     Y: 2
     Z: 21
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '589':
     X: 6
     Y: 1
     Z: 5
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '590':
     X: 3
     Y: 2
     Z: 21
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '591':
     X: 0
     Y: 2
     Z: 21
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '592':
     X: 0
     Y: 2
     Z: 17
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '593':
     X: 0
     Y: 2
     Z: 14
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '594':
     X: 6
     Y: 1
     Z: 17
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '595':
     X: 14
     Y: 2
     Z: 21
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '596':
     X: 6
     Y: 1
     Z: 15
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '597':
     X: 14
     Y: 2
     Z: 17
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '598':
     X: 6
     Y: 1
     Z: 13
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '599':
     X: 14
     Y: 2
     Z: 14
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '600':
     X: 6
     Y: 1
     Z: 11
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '601':
     X: 14
     Y: 2
     Z: 11
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '602':
     X: 6
     Y: 1
     Z: 9
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '603':
     X: 14
     Y: 2
     Z: 8
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '604':
     X: 6
     Y: 1
     Z: 7
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   '605':
     X: 14
     Y: 2
     Z: 5
-    ID: 76
-    DATA: '0'
+    ID: RED_CANDLE
   LENGTH: 606

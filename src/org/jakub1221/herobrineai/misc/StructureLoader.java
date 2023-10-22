@@ -1,58 +1,32 @@
 package org.jakub1221.herobrineai.misc;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-
+import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.craftbukkit.libs.jline.internal.InputStreamReader;
+import org.bukkit.configuration.file.FileConfiguration;
 
 public class StructureLoader {
 
 	private int current = 0;
 	private int length = 0;
-	private InputStream inp;
-	private YamlConfiguration file;
+	private FileConfiguration file;
 
-	public StructureLoader(InputStream in) {
-		inp = in;
-
-		file = new YamlConfiguration();
-
-		try {
-			file.load(new InputStreamReader(inp));
-		} catch (FileNotFoundException e) {
-
-			e.printStackTrace();
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		} catch (InvalidConfigurationException e) {
-
-			e.printStackTrace();
-		}
-
-		try {
-			inp.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public StructureLoader(FileConfiguration config) {
+		file = config;
 	}
 
-	@SuppressWarnings("deprecation")
 	public void Build(World world, int MainX, int MainY, int MainZ) {
 
 		length = file.getInt("DATA.LENGTH") - 1;
 		for (current = 0; current <= length; current++) {
-			world.getBlockAt(MainX + file.getInt("DATA." + current + ".X"),
-					MainY + file.getInt("DATA." + current + ".Y"), MainZ + file.getInt("DATA." + current + ".Z"))
-					.setTypeIdAndData(+file.getInt("DATA." + current + ".ID"),(byte) +file.getInt("DATA." + current + ".DATA"), false);
-			
+			try {
+				world.getBlockAt(MainX + file.getInt("DATA." + current + ".X"),
+						MainY + file.getInt("DATA." + current + ".Y"), MainZ + file.getInt("DATA." + current + ".Z"))
+						.setType(Material.valueOf(file.getString("DATA." + current + ".ID")));
+			} catch (NullPointerException ex) {
+				ex.printStackTrace();
+				System.out.println("Error processing: DATA." + current);
+			}
+
 		}
-
 	}
-
 }

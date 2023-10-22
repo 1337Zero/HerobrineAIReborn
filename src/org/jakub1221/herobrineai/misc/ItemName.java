@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
-import org.bukkit.SkullType;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -55,12 +55,14 @@ public class ItemName {
 		return item.getItemMeta().getDisplayName();
 	}
 
-	public static ItemStack CreateSkull(String data) {
-		ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
+	public static ItemStack CreateSkullByPlayer(Player p) {
+		
+		ItemStack skull = new ItemStack(Material.PLAYER_HEAD);
 		SkullMeta skullmeta = (SkullMeta) skull.getItemMeta();
-		skullmeta.setOwner(data);
+		skullmeta.setOwnerProfile(p.getPlayerProfile());
+		
 
-		skullmeta.setDisplayName(ChatColor.RESET + data);
+		skullmeta.setDisplayName(ChatColor.RESET + p.getDisplayName());
 		skull.setItemMeta(skullmeta);
 		return skull;
 	}

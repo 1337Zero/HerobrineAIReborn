@@ -1,13 +1,15 @@
 package org.jakub1221.herobrineai.misc;
 
-import java.util.Random;
+import java.util.UUID;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.SkullType;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.Skull;
+import org.bukkit.block.data.Directional;
+import org.bukkit.entity.Player;
 
 public class BlockChanger {
 
@@ -78,29 +80,26 @@ public class BlockChanger {
 
 	}
 
-	public static void PlaceSkull(Location loc, String name) {
-		int chance = new Random().nextInt(7);
+
+	public static void PlaceSkull(Location loc, Player player) {
+		//int chance = new Random().nextInt(7);
 		Block b = loc.getBlock();
-		b.setType(Material.SKULL);
+		b.setType(Material.PLAYER_HEAD);
 
 		Skull skull = (Skull) b.getState();
-		skull.setSkullType(SkullType.PLAYER);
-		skull.setOwner(name);
+		
+		skull.setOwnerProfile(player.getPlayerProfile());
+	}
 
-		BlockFace bface = BlockFace.EAST;
+	public static void PlaceHeroBrineSkull(Location loc) {
+		Block b = loc.getBlock();
+		b.setType(Material.PLAYER_HEAD);
 
-		if (chance == 0) {
-			bface = BlockFace.WEST;
-		} else if (chance == 1) {
-			bface = BlockFace.EAST;
-		} else if (chance == 2) {
-			bface = BlockFace.SOUTH;
-		} else if (chance == 3) {
-			bface = BlockFace.NORTH;
-		}
+		Directional d = (Directional)b.getBlockData();
 
-		skull.setRawData((byte) bface.ordinal());
-		skull.update(true);
+		d.setFacing(getPlayerBlockFace(loc));
 
+		Skull skull = (Skull) b.getState();
+		skull.setOwningPlayer(Bukkit.getOfflinePlayer(UUID.fromString("f84c6a79-0a4e-45e0-879b-cd49ebd4c4e2")));
 	}
 }

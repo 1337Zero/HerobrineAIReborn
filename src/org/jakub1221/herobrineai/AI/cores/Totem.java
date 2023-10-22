@@ -28,7 +28,7 @@ public class Totem extends Core {
 		AICore.isTotemCalled = false;
 		loc.getWorld().strikeLightning(loc);
 		
-		if (PluginCore.getConfigDB().TotemExplodes == true) {
+		if (HerobrineAI.getPluginCore().config.getBoolean("config.TotemExplodes") == true) {
 			loc.getWorld().createExplosion(loc, 5);
 		}
 		
@@ -49,7 +49,7 @@ public class Totem extends Core {
 								&& ploc.getZ() - 10 < loc.getZ()) {
 
 							Message.SendMessage(onlinePlayer);
-							if (PluginCore.getConfigDB().UsePotionEffects) {
+							if (HerobrineAI.getPluginCore().config.getBoolean("config.UsePotionEffects")) {
 								onlinePlayer.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 1000, 1));
 								onlinePlayer.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 1000, 1));
 								onlinePlayer.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 1000, 1));

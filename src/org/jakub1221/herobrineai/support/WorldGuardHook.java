@@ -6,9 +6,10 @@ import java.util.Map.Entry;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
-import com.sk89q.worldguard.protection.managers.RegionManager;
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
+import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
+import com.sk89q.worldguard.protection.regions.RegionContainer;
 
 public class WorldGuardHook {
 	public boolean Check() {
@@ -18,17 +19,18 @@ public class WorldGuardHook {
 
 	public boolean isSecuredArea(Location loc) {
 
-		WorldGuardPlugin worldGuard = (WorldGuardPlugin) Bukkit.getServer().getPluginManager().getPlugin("WorldGuard");
-		RegionManager rm = worldGuard.getRegionManager(loc.getWorld());
+		//WorldGuardPlugin worldGuard = (WorldGuardPlugin) Bukkit.getServer().getPluginManager().getPlugin("WorldGuard");
+		RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+
+		Map<String, ProtectedRegion> rm = container.get(BukkitAdapter.adapt(loc.getWorld())).getRegions();
+
 		if (rm != null) {
-			Map<String, ProtectedRegion> mp = rm.getRegions();
-			if (mp != null) {
-				for (Entry<String, ProtectedRegion> s : mp.entrySet()) {
-					if (s.getValue().contains(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ())) {
-						return true;
-					}
+			for (Entry<String, ProtectedRegion> s : rm.entrySet()) {
+				if (s.getValue().contains(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ())) {
+					return true;
 				}
 			}
+
 		}
 
 		return false;

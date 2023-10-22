@@ -17,9 +17,9 @@ public class WorldListener implements Listener{
 
 			World world = event.getWorld();
 			
-			if (HerobrineAI.getPluginCore().getConfigDB().useWorlds.contains(world.getName())){
+			if (HerobrineAI.getPluginCore().config.getStringList("config.useWorlds").contains(world.getName())){
 
-			 if (HerobrineAI.getPluginCore().getConfigDB().BuildTemples==true){
+			 if (HerobrineAI.getPluginCore().config.getBoolean("config.BuildTemples")==true){
 			
 				 if (new Random().nextInt(2)==1){
 					 Object[] data = {event.getChunk()};
@@ -29,7 +29,7 @@ public class WorldListener implements Listener{
 			 
 			 }
 			 
-			 if (HerobrineAI.getPluginCore().getConfigDB().BuildPyramids==true){
+			 if (HerobrineAI.getPluginCore().config.getBoolean("config.BuildPyramids")==true){
 					
 				 if (new Random().nextInt(30)==4){
 					 Object[] data = {event.getChunk()};

@@ -1,7 +1,9 @@
 name: HerobrineAIReborn
 main: org.jakub1221.herobrineai.HerobrineAI
-version: 3.4.3
+version: 4.0
 description: Let Herobrine haunt u!
+load: POSTWORLD
+api-version: '1.20'
 commands:
     hb-ai:
       description: Main command.

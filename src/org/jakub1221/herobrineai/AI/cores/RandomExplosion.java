@@ -1,7 +1,5 @@
 package org.jakub1221.herobrineai.AI.cores;
 
-import java.util.Random;
-
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.jakub1221.herobrineai.HerobrineAI;
@@ -19,7 +17,7 @@ public class RandomExplosion extends Core {
 	public CoreResult CallCore(Object[] data) {
 
 		Player player = (Player) data[0];
-		if (PluginCore.getConfigDB().Explosions) {
+		if (HerobrineAI.getPluginCore().config.getBoolean("config.Explosions")) {
 			if (PluginCore.getSupport().checkBuild(player.getLocation())) {
 
 				Location loc = player.getLocation();

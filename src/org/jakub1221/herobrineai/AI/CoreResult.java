@@ -17,4 +17,11 @@ public class CoreResult {
 	public String getResultString() {
 		return this.text;
 	}
+
+	@Override
+	public String toString() {
+		return "CoreResult [bo=" + bo + ", text=" + text + "]";
+	}
+	
+	
 }

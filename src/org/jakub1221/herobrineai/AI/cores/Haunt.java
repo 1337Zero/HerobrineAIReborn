@@ -1,26 +1,21 @@
 package org.jakub1221.herobrineai.AI.cores;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.Random; 
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Wolf;
+import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.jakub1221.herobrineai.HerobrineAI;
 import org.jakub1221.herobrineai.Utils;
 import org.jakub1221.herobrineai.AI.AICore;
 import org.jakub1221.herobrineai.AI.Core;
 import org.jakub1221.herobrineai.AI.CoreResult;
 
-import com.google.common.collect.Sets;
 
 public class Haunt extends Core {
 
@@ -52,9 +47,10 @@ public class Haunt extends Core {
 			AICore.isTarget = true;
 			AICore.PlayerTarget = player;
 			AICore.log.info("[HerobrineAI] Hauntig player!");
-			Location loc = (Location) PluginCore.HerobrineNPC.getBukkitEntity().getLocation();
+			Location loc = (Location) PluginCore.HerobrineNPC.getEntity().getLocation();
 			loc.setY(-20);
-			PluginCore.HerobrineNPC.moveTo(loc);
+			//PluginCore.HerobrineNPC.moveTo(loc);
+			PluginCore.HerobrineNPC.teleport(loc,TeleportCause.PLUGIN);
 
 			StartHandler();
 			return new CoreResult(true, "Herobrine haunts " + player.getName() + "!");
@@ -101,12 +97,12 @@ public class Haunt extends Core {
 					int randx = randxgen.nextInt(100);
 					if (randx < 70) {
 					} else if (randx < 80 && spawnedBats < 2) {
-						if (PluginCore.getConfigDB().SpawnBats) {
+						if (HerobrineAI.getPluginCore().config.getBoolean("config.SpawnBats")) {
 							ploc.getWorld().spawnEntity(ploc, EntityType.BAT);
 							spawnedBats++;
 						}
 					} else if (randx < 90 && spawnedWolves < 1) {
-						if (PluginCore.getConfigDB().SpawnWolves) {
+						if (HerobrineAI.getPluginCore().config.getBoolean("config.SpawnWolves")) {
 							Wolf wolf = (Wolf) ploc.getWorld().spawnEntity(ploc, EntityType.WOLF);
 							wolf.setAdult();
 							wolf.setAngry(true);
@@ -114,7 +110,7 @@ public class Haunt extends Core {
 						}
 					}
 
-					if (PluginCore.getConfigDB().Lighting == true) {
+					if (HerobrineAI.getPluginCore().config.getBoolean("config.Lighting") == true) {
 
 						int lchance = randxgen.nextInt(100);
 
@@ -162,7 +158,7 @@ public class Haunt extends Core {
 				&& PluginCore.getAICore().getCoreTypeNow() == CoreType.HAUNT) {
 			if (AICore.PlayerTarget.isDead() == false) {
 
-				Location loc = (Location) PluginCore.HerobrineNPC.getBukkitEntity().getLocation();
+				Location loc = (Location) PluginCore.HerobrineNPC.getEntity().getLocation();
 
 				if (Bukkit.getServer().getOnlinePlayers().size() > 0) {
 					
@@ -191,7 +187,7 @@ public class Haunt extends Core {
 				HerobrineAI.HerobrineHP = HerobrineAI.HerobrineMaxHP;
 				loc = AICore.PlayerTarget.getLocation();
 				loc.setY(loc.getY() + 1.5);
-				PluginCore.HerobrineNPC.lookAtPoint(loc);
+				PluginCore.HerobrineNPC.faceLocation(loc);
 
 				_ticks++;
 
@@ -215,14 +211,11 @@ public class Haunt extends Core {
 		if (AICore.PlayerTarget.isOnline() && AICore.isTarget
 				&& PluginCore.getAICore().getCoreTypeNow() == CoreType.HAUNT) {
 			if (AICore.PlayerTarget.isDead() == false) {
-				if (PluginCore.getConfigDB().useWorlds
-						.contains(AICore.PlayerTarget.getWorld().getName())) {
-
+				if (HerobrineAI.getPluginCore().config.getStringList("config.useWorlds").contains(AICore.PlayerTarget.getWorld().getName())) {
 					FindAndTeleport(AICore.PlayerTarget);
 					Location ploc = (Location) AICore.PlayerTarget.getLocation();
 					ploc.setY(ploc.getY() + 1.5);
-					PluginCore.HerobrineNPC.lookAtPoint(ploc);
-
+					PluginCore.HerobrineNPC.faceLocation(ploc);
 				} else {
 					PluginCore.getAICore().CancelTarget(CoreType.HAUNT);
 				}
@@ -232,7 +225,6 @@ public class Haunt extends Core {
 		} else {
 			PluginCore.getAICore().CancelTarget(CoreType.HAUNT);
 		}
-
 	}
 
 	public boolean FindAndTeleport(Player player) {
@@ -252,11 +244,9 @@ public class Haunt extends Core {
 		zMax = randGen.nextBoolean() ? -zMax : zMax;
 
 		for (y = -randY; y <= randY; y++) {
-
 			for (x = -xMax; xMax > 0 ? x <= xMax : x >= xMax; x += xMax > 0 ? 1 : -1) {
 				for (z = -zMax; zMax > 0 ? z <= zMax : z >= zMax; z += zMax > 0 ? 1 : -1) {
 					if (!(x >= -4 && x <= 4 && z >= -4 && z <= 4)) {
-						
 						Material blockBottom =  loc.getWorld().getBlockAt(
 								x + loc.getBlockX(), 
 								y + loc.getBlockY() - 1, 
@@ -271,32 +261,29 @@ public class Haunt extends Core {
 								x + loc.getBlockX(), 
 								y + loc.getBlockY() + 1, 
 								z + loc.getBlockZ()).getType();
-						
 						if (blockBottom.isSolid() && blockMiddle.isSolid() && blockTop.isSolid()){							
-							//Teleport(loc.getWorld(), x + loc.getBlockX(), y + loc.getBlockY(), z + loc.getBlockZ());	
 							Teleport(loc.getWorld(), x + loc.getBlockX(),loc.getWorld().getHighestBlockAt(loc).getY(), z + loc.getBlockZ(),loc);
-							
 							return true;
+						}else{
+							System.out.println("non solid block");
 						}
 					}
 				}
-
 			}
-
 		}
-
 		return false;
 
 	}
 
 	public void Teleport(World world, int X, int Y, int Z,Location lookAt) {
-		Location loc = (Location) PluginCore.HerobrineNPC.getBukkitEntity().getLocation();
+		Location loc = (Location) PluginCore.HerobrineNPC.getEntity().getLocation();
 		loc.setWorld(world);
 		loc.setX((double) X);
-		loc.setY((double) Y);
+		loc.setY((double) Y+1);
 		loc.setZ((double) Z);
-		PluginCore.HerobrineNPC.lookAtPoint(lookAt);
-		PluginCore.HerobrineNPC.moveTo(loc);
+		//PluginCore.HerobrineNPC.moveTo(loc);
+		PluginCore.HerobrineNPC.teleport(loc,TeleportCause.PLUGIN);
+		//PluginCore.HerobrineNPC.lookAtPoint(lookAt);
 	}
 
 }

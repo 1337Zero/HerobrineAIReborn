@@ -8,7 +8,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Jukebox;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventPriority;
@@ -18,27 +17,17 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.bukkit.inventory.ItemStack;
 import org.jakub1221.herobrineai.HerobrineAI;
 import org.jakub1221.herobrineai.Utils;
 import org.jakub1221.herobrineai.AI.AICore;
 import org.jakub1221.herobrineai.AI.Core.CoreType;
-import org.jakub1221.herobrineai.NPC.Entity.HumanEntity;
 import org.jakub1221.herobrineai.misc.ItemName;
-
-import net.minecraft.server.v1_12_R1.EntityPlayer;
-import net.minecraft.server.v1_12_R1.PacketPlayOutCamera;
-import net.minecraft.server.v1_12_R1.PacketPlayOutNamedEntitySpawn;
-import net.minecraft.server.v1_12_R1.PacketPlayOutPlayerInfo;
-import net.minecraft.server.v1_12_R1.PacketPlayOutSpawnEntityLiving;
-import net.minecraft.server.v1_12_R1.PlayerConnection;
-import net.minecraft.server.v1_12_R1.PacketPlayOutPlayerInfo.EnumPlayerInfoAction;
 
 public class PlayerListener implements Listener {
 
@@ -63,10 +52,10 @@ public class PlayerListener implements Listener {
 	public void onPlayerInteract(PlayerInteractEvent event) {
 
 		if (event.getAction() == Action.LEFT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-			if (event.getClickedBlock() != null && event.getPlayer().getItemInHand() != null) {
+			if (event.getClickedBlock() != null && event.getPlayer().getInventory().getItemInMainHand() != null) {
 
-				ItemStack itemInHand = event.getPlayer().getItemInHand();
-				if (event.getPlayer().getItemInHand().getType() != null) {
+				ItemStack itemInHand = event.getPlayer().getInventory().getItemInMainHand();
+				if (event.getPlayer().getInventory().getItemInMainHand().getType() != null) {
 
 					if (itemInHand.getType() == Material.DIAMOND_SWORD
 							|| itemInHand.getType() == Material.GOLDEN_APPLE) {
@@ -74,7 +63,7 @@ public class PlayerListener implements Listener {
 						if (ItemName.getLore(itemInHand) != null) {
 
 							if (ItemName.getLore(itemInHand).containsAll(equalsLoreS)
-								&& PluginCore.getConfigDB().UseArtifactSword) {
+								&& PluginCore.config.getBoolean("config.UseArtifact.Sword")) {
 
 								if (Utils.getRandomGen().nextBoolean()) {
 									event.getPlayer().getLocation().getWorld()
@@ -82,7 +71,7 @@ public class PlayerListener implements Listener {
 								}
 
 							} else if (ItemName.getLore(itemInHand).containsAll(equalsLoreA)
-									   && PluginCore.getConfigDB().UseArtifactApple) {
+									   && PluginCore.config.getBoolean("config.UseArtifact.Apple")) {
 								
 								timestamp = System.currentTimeMillis() / 1000;
 								canUse = false;
@@ -140,14 +129,14 @@ public class PlayerListener implements Listener {
 		}
 
 		if (event.getClickedBlock() != null) {
-			if (event.getPlayer().getItemInHand() != null) {
+			if (event.getPlayer().getInventory().getItemInMainHand() != null) {
 				if (event.getClickedBlock().getType() == Material.JUKEBOX) {
 
-					ItemStack item = event.getPlayer().getItemInHand();
+					ItemStack item = event.getPlayer().getInventory().getItemInMainHand();
 					Jukebox block = (Jukebox) event.getClickedBlock().getState();
 
 					if (!block.isPlaying()) {
-						if (item.getType() == Material.getMaterial(2266)) {
+						if (item.getType() == Material.MUSIC_DISC_11) {
 
 							PluginCore.getAICore();
 
@@ -177,7 +166,7 @@ public class PlayerListener implements Listener {
 	public void onPlayerEnterBed(PlayerBedEnterEvent event) {
 		if (Utils.getRandomGen().nextInt(100) > 75) {
 			Player player = event.getPlayer();
-			((CraftPlayer) player).getHandle().a(true, false, false);
+			//((CraftPlayer) player).getHandle().a(true, false, false);
 			PluginCore.getAICore().playerBedEnter(player);
 		}
 	}
@@ -186,12 +175,11 @@ public class PlayerListener implements Listener {
 
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		if (event.getPlayer().getEntityId() != PluginCore.HerobrineEntityID) {
-
-			if (PluginCore.getAICore().PlayerTarget == event.getPlayer()
+			if (AICore.PlayerTarget == event.getPlayer()
 					&& PluginCore.getAICore().getCoreTypeNow() == CoreType.GRAVEYARD
 					&& event.getPlayer().getLocation().getWorld() == Bukkit.getServer()
 							.getWorld("world_herobrineai_graveyard")
-					&& PluginCore.getAICore().isTarget) {
+					&& AICore.isTarget) {
 
 				if (Utils.getRandomGen().nextBoolean()) {
 					event.getPlayer()
@@ -211,7 +199,6 @@ public class PlayerListener implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerTeleport(PlayerTeleportEvent event) {
-
 		if (event.getPlayer().getEntityId() == PluginCore.HerobrineEntityID) {
 			if (event.getFrom().getWorld() != event.getTo().getWorld()) {
 				PluginCore.HerobrineRemove();
@@ -219,18 +206,15 @@ public class PlayerListener implements Listener {
 				event.setCancelled(true);
 				return;
 			}
-
 			if (PluginCore.getAICore().getCoreTypeNow() == CoreType.RANDOM_POSITION) {
-
-				Location herobrineLocation = PluginCore.HerobrineNPC.getEntity().getBukkitEntity().getLocation();
-
-				if (herobrineLocation.getBlockX() > PluginCore.getConfigDB().WalkingModeXRadius
-					&& herobrineLocation.getBlockX() < -PluginCore.getConfigDB().WalkingModeXRadius
-					&& herobrineLocation.getBlockZ() > PluginCore.getConfigDB().WalkingModeZRadius
-					&& herobrineLocation.getBlockZ() < -PluginCore.getConfigDB().WalkingModeZRadius) {
+				Location herobrineLocation = PluginCore.HerobrineNPC.getEntity().getLocation();
+				if (herobrineLocation.getBlockX() > PluginCore.config.getInt("config.WalkingModeXRadius")
+					&& herobrineLocation.getBlockX() < -PluginCore.config.getInt("config.WalkingModeXRadius")
+					&& herobrineLocation.getBlockZ() > PluginCore.config.getInt("config.WalkingModeZRadius")
+					&& herobrineLocation.getBlockZ() < -PluginCore.config.getInt("config.WalkingModeZRadius")) {
 					
 					PluginCore.getAICore().CancelTarget(CoreType.RANDOM_POSITION);
-					PluginCore.HerobrineNPC.moveTo(new Location(Bukkit.getServer().getWorlds().get(0), 0, -20, 0));
+					PluginCore.HerobrineNPC.teleport(new Location(Bukkit.getServer().getWorlds().get(0), 0, -20, 0),TeleportCause.PLUGIN);
 
 				}
 			}
@@ -254,32 +238,13 @@ public class PlayerListener implements Listener {
 	@EventHandler
 	public void onPlayerMoveEvent(PlayerMoveEvent event) {
 		if (event.getPlayer().getEntityId() != PluginCore.HerobrineEntityID) {
-			if (event.getPlayer().getWorld() == Bukkit.getServer().getWorld("world_herobrineai_graveyard")) {
-				Player player = (Player) event.getPlayer();
-				player.teleport(new Location(Bukkit.getServer().getWorld("world_herobrineai_graveyard"), -2.49f, 4.f,
-						10.69f, -179.85f, 0.44999f));
-			}
-		}
-
-	}
-	@EventHandler
-	public void onPlayerLogin(PlayerJoinEvent event){
-
-		EntityPlayer humanEntity = (EntityPlayer) PluginCore.HerobrineNPC.getEntity();		
-		
-		if(humanEntity == null){
-			System.out.println("herobrine entity is null!");
-		}else{
-			PlayerConnection con = ((CraftPlayer)event.getPlayer()).getHandle().playerConnection;
-			if(con == null){
-				System.out.println("con == null");
-			}else{
-				//con.sendPacket(new PacketPlayOutSpawnEnity
-				//con.sendPacket(new PacketPlayOutPlayerInfo);
-				con.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER,humanEntity));
-				con.sendPacket(new PacketPlayOutNamedEntitySpawn(humanEntity));				
+			if(!event.getPlayer().hasPermission("herobrineai.movegraveyard")){
+				if (event.getPlayer().getWorld() == Bukkit.getServer().getWorld("world_herobrineai_graveyard")) {
+					Player player = (Player) event.getPlayer();
+					player.teleport(new Location(Bukkit.getServer().getWorld("world_herobrineai_graveyard"), -2.49f, 4.f,
+							10.69f, -179.85f, 0.44999f));
+				}
 			}			
-		}		
+		}
 	}
-
 }

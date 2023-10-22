@@ -65,23 +65,29 @@ public class Support {
 	}
 
 	public boolean checkBuild(final Location loc) {
-		return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Build || !isSecuredArea(loc);
+		//return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Build || !isSecuredArea(loc);
+		return HerobrineAI.getPluginCore().config.getBoolean("config.SecuredArea_Build") || !isSecuredArea(loc);
 	}
 
 	public boolean checkAttack(final Location loc) {
-		return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Attack || !isSecuredArea(loc);
+		return HerobrineAI.getPluginCore().config.getBoolean("config.SecuredArea_Attack") || !isSecuredArea(loc);
+		//return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Attack || !isSecuredArea(loc);
 	}
 
 	public boolean checkHaunt(final Location loc) {
-		return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Haunt || !isSecuredArea(loc);
+		//return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Haunt || !isSecuredArea(loc);		
+		return HerobrineAI.getPluginCore().config.getBoolean("config.SecuredArea_Haunt") || !isSecuredArea(loc);
 	}
 
 	public boolean checkSigns(final Location loc) {
-		return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Signs || !isSecuredArea(loc);
+		//return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Signs || !isSecuredArea(loc);
+		return HerobrineAI.getPluginCore().config.getBoolean("config.SecuredArea_Signs") || !isSecuredArea(loc);
 	}
 
 	public boolean checkBooks(final Location loc) {
-		return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Books || !isSecuredArea(loc);
+		
+		//return HerobrineAI.getPluginCore().getConfigDB().SecuredArea_Books || !isSecuredArea(loc);
+		return HerobrineAI.getPluginCore().config.getBoolean("config.SecuredArea_Books") || !isSecuredArea(loc);
 	}
 	
 	public boolean isCustomItems() {

@@ -43,10 +43,10 @@ public class BlockListener implements Listener {
 							{ new Vector(1, -1, 1), Material.GOLD_BLOCK },
 							{ new Vector(0, -1, -1), Material.GOLD_BLOCK },
 							{ new Vector(0, -1, +1), Material.GOLD_BLOCK },
-							{ new Vector(0, 0, 1), Material.REDSTONE_TORCH_ON },
-							{ new Vector(0, 0, -1), Material.REDSTONE_TORCH_ON },
-							{ new Vector(1, 0, 0), Material.REDSTONE_TORCH_ON },
-							{ new Vector(-1, 0, 0), Material.REDSTONE_TORCH_ON } 
+							{ new Vector(0, 0, 1), Material.RED_CANDLE },
+							{ new Vector(0, 0, -1), Material.RED_CANDLE },
+							{ new Vector(1, 0, 0), Material.RED_CANDLE },
+							{ new Vector(-1, 0, 0), Material.RED_CANDLE } 
 							};
 
 					boolean checkListCorrect = true;
@@ -64,10 +64,9 @@ public class BlockListener implements Listener {
 						}
 					}
 
-					if (checkListCorrect && HerobrineAI.getPluginCore().getConfigDB().UseTotem && !AICore.isTotemCalled) {
+					if (checkListCorrect && HerobrineAI.getPluginCore().config.getBoolean("config.UseTotem") && !AICore.isTotemCalled) {
 						HerobrineAI.getPluginCore().getAICore().PlayerCallTotem(event.getPlayer());
 					}
-
 				}
 			}
 		}
@@ -81,26 +80,28 @@ public class BlockListener implements Listener {
 
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
-		if (event.getBlock().getWorld() == Bukkit.getServer().getWorld("world_herobrineai_graveyard")) {
-			event.setCancelled(true);
-			return;
-		} else {
-			Heads h = (Heads) HerobrineAI.getPluginCore().getAICore().getCore(CoreType.HEADS);
-			ArrayList<Block> list = h.getHeadList();
-			if (list.contains(event.getBlock())) {
+		if(!event.getPlayer().hasPermission("herobrineai.movegraveyard")){
+			if (event.getBlock().getWorld() == Bukkit.getServer().getWorld("world_herobrineai_graveyard")) {
 				event.setCancelled(true);
 				return;
+			} else {
+				Heads h = (Heads) HerobrineAI.getPluginCore().getAICore().getCore(CoreType.HEADS);
+				ArrayList<Block> list = h.getHeadList();
+				if (list.contains(event.getBlock())) {
+					event.setCancelled(true);
+					return;
+				}
 			}
 		}
-
 	}
 
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event) {
-		if (event.getBlock().getWorld() == Bukkit.getServer().getWorld("world_herobrineai_graveyard")) {
-			event.setCancelled(true);
-			return;
+		if(!event.getPlayer().hasPermission("herobrineai.movegraveyard")){
+			if (event.getBlock().getWorld() == Bukkit.getServer().getWorld("world_herobrineai_graveyard")) {
+				event.setCancelled(true);
+				return;
+			}
 		}
-
 	}
 }

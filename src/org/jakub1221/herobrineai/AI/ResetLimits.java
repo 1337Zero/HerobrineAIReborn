@@ -64,9 +64,9 @@ public class ResetLimits {
 	}
 
 	public void updateFromConfig() {
-		maxBooks = HerobrineAI.getPluginCore().getConfigDB().maxBooks;
-		maxSigns = HerobrineAI.getPluginCore().getConfigDB().maxSigns;
-		maxHeads = HerobrineAI.getPluginCore().getConfigDB().maxHeads;
+		maxBooks = HerobrineAI.getPluginCore().config.getInt("config.maxBooks");
+		maxSigns = HerobrineAI.getPluginCore().config.getInt("config.maxSigns");
+		maxHeads = HerobrineAI.getPluginCore().config.getInt("config.maxHeads");
 	}
 
 }

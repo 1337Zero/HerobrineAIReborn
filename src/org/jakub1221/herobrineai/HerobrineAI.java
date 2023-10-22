@@ -1,38 +1,36 @@
 package org.jakub1221.herobrineai;
 
+import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Color;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.metadata.FixedMetadataValue;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jakub1221.herobrineai.NPC.AI.Path;
 import org.jakub1221.herobrineai.NPC.AI.PathManager;
-import org.jakub1221.herobrineai.NPC.Entity.HumanNPC;
 import org.jakub1221.herobrineai.NPC.NPCCore;
 import org.jakub1221.herobrineai.AI.AICore;
 import org.jakub1221.herobrineai.AI.Core.CoreType;
 import org.jakub1221.herobrineai.AI.extensions.GraveyardWorld;
 import org.jakub1221.herobrineai.commands.CmdExecutor;
-import org.jakub1221.herobrineai.entity.CustomSkeleton;
-import org.jakub1221.herobrineai.entity.CustomZombie;
 import org.jakub1221.herobrineai.entity.EntityManager;
 import org.jakub1221.herobrineai.listeners.BlockListener;
 import org.jakub1221.herobrineai.listeners.EntityListener;
@@ -40,20 +38,28 @@ import org.jakub1221.herobrineai.listeners.InventoryListener;
 import org.jakub1221.herobrineai.listeners.PlayerListener;
 import org.jakub1221.herobrineai.listeners.WorldListener;
 
+import net.citizensnpcs.api.npc.NPC;
+import net.citizensnpcs.api.trait.trait.Equipment;
+import net.citizensnpcs.api.trait.trait.Equipment.EquipmentSlot;
+
 public class HerobrineAI extends JavaPlugin implements Listener {
 
-	private static HerobrineAI pluginCore;
+	public static HerobrineAI pluginCore;
 	private AICore aicore;
-	private ConfigDB configdb;
+	
+	public FileConfiguration config;
+	public FileConfiguration schem_graveyardword;
+	public FileConfiguration schem_temple;
+
 	private Support support;
 	private EntityManager entMng;
 	private PathManager pathMng;
 	private NPCCore NPCman;
-	public HumanNPC HerobrineNPC;
 	public long HerobrineEntityID;
 	public boolean isInitDone = false;
 	private int pathUpdateINT = 0;
-	
+	public NPC HerobrineNPC;
+
 	public static String versionStr = "UNDEFINED";
 	public static boolean isNPCDisabled = false;
 	public static String bukkit_ver_string = "1.12.2";
@@ -68,25 +74,28 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 	public static Logger log = Logger.getLogger("Minecraft");
 
 	public void onEnable() {
-		
+
 		PluginDescriptionFile pdf = this.getDescription();
 		versionStr = pdf.getVersion();
 
 		boolean errorCheck = true;
 
-		try {
+		/*try {
 			Class.forName("net.minecraft.server.v1_12_R1.Entity");
 		} catch (ClassNotFoundException e) {
 			errorCheck = false;
 			isInitDone = false;
-		}
+		}*/
 		if (errorCheck) {
-			
+
 			isInitDone = true;
-			
+
 			HerobrineAI.pluginCore = this;
-			
-			this.configdb = new ConfigDB(log);
+
+			//this.configdb = new ConfigDB(log);
+			config = getConfig();
+			config.options().copyDefaults(true);
+			saveConfig();
 
 			this.NPCman = new NPCCore(this);
 
@@ -96,14 +105,6 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 			getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
 			getServer().getPluginManager().registerEvents(new WorldListener(), this);
 
-			// Metrics
-
-			try {
-				Metrics metrics = new Metrics(this);
-				metrics.start();
-			} catch (IOException e) {
-
-			}
 
 			// Initialize PathManager
 
@@ -117,10 +118,10 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 
 			this.entMng = new EntityManager();
 
-			// Config loading
+			// Custom Config loading
 
-			configdb.Startup();
-			configdb.Reload();
+			schem_graveyardword = createCustomConfig("graveyard_world.yml");
+			schem_temple = createCustomConfig("temple.yml");
 
 			// Spawn Herobrine
 
@@ -130,41 +131,49 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 			nowloc.setPitch((float) 1);
 			HerobrineSpawn(nowloc);
 
-			HerobrineNPC.setItemInHand(configdb.ItemInHand.getItemStack());
+			Equipment eq = HerobrineNPC.getOrAddTrait(Equipment.class);
+			//eq.set(EquipmentSlot.HAND, configdb.ItemInHand.getItemStack());
+			eq.set(EquipmentSlot.HAND, new ItemStack(Material.valueOf(config.getString("config.ItemInHand"))));
+			
 
 			// Graveyard World
 
-			if (this.configdb.UseGraveyardWorld == true && Bukkit.getServer().getWorld("world_herobrineai_graveyard") == null) {
+			File file = new File(getServer().getWorldContainer(), "world_herobrineai_graveyard");
+			//if (!file.exists() && configdb.UseGraveyardWorld) {
+			if (!file.exists() && config.getBoolean("config.UseGraveyardWorld")) {
+				// create new World
 				log.info("[HerobrineAI] Creating Graveyard world...");
-				
+
 				WorldCreator wc = new WorldCreator("world_herobrineai_graveyard");
 				wc.generateStructures(false);
 				org.bukkit.WorldType type = org.bukkit.WorldType.FLAT;
 				wc.type(type);
 				wc.createWorld();
-				
+				Bukkit.getServer().createWorld(wc);
 				GraveyardWorld.Create();
+			} else if (file.exists() && config.getBoolean("config.UseGraveyardWorld")) {
+				log.info("[HerobrineAI] loading Graveyard world...");
+				Bukkit.getServer().createWorld(new WorldCreator("world_herobrineai_graveyard"));
 			}
+
 			log.info("[HerobrineAI] Plugin loaded! Version: ");
 
 			// Init Block Types
 
 			AllowedBlocks.add(Material.AIR);
 			AllowedBlocks.add(Material.SNOW);
-			AllowedBlocks.add(Material.getMaterial(31));
-			AllowedBlocks.add(Material.RAILS);
-			AllowedBlocks.add(Material.getMaterial(32));
-			AllowedBlocks.add(Material.getMaterial(37));
-			AllowedBlocks.add(Material.getMaterial(38));
-			AllowedBlocks.add(Material.getMaterial(70));
-			AllowedBlocks.add(Material.getMaterial(72));
-			AllowedBlocks.add(Material.getMaterial(106));
+			// Dead Shrub
+			AllowedBlocks.add(Material.DEAD_BUSH);
+			AllowedBlocks.add(Material.RAIL);
+			AllowedBlocks.add(Material.DANDELION);
+			AllowedBlocks.add(Material.POPPY);
+			AllowedBlocks.add(Material.STONE_PRESSURE_PLATE);
+			AllowedBlocks.add(Material.OAK_PRESSURE_PLATE);
+			AllowedBlocks.add(Material.VINE);
 			AllowedBlocks.add(Material.TORCH);
 			AllowedBlocks.add(Material.REDSTONE);
-			AllowedBlocks.add(Material.REDSTONE_TORCH_ON);
-			AllowedBlocks.add(Material.REDSTONE_TORCH_OFF);
 			AllowedBlocks.add(Material.LEVER);
-			AllowedBlocks.add(Material.getMaterial(77));
+			AllowedBlocks.add(Material.STONE_BUTTON);
 			AllowedBlocks.add(Material.LADDER);
 
 			/*
@@ -193,7 +202,8 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 				public void run() {
 					if (Utils.getRandomGen().nextInt(4) == 2 && HerobrineAI.getPluginCore().getAICore().getCoreTypeNow()
 							.equals(CoreType.RANDOM_POSITION)) {
-						pathMng.setPath(new Path(Utils.getRandomGen().nextInt(15) - 7f, Utils.getRandomGen().nextInt(15) - 7f, HerobrineAI.getPluginCore()));
+						pathMng.setPath(new Path(Utils.getRandomGen().nextInt(15) - 7f,
+								Utils.getRandomGen().nextInt(15) - 7f, HerobrineAI.getPluginCore()));
 					}
 				}
 			}, 1 * 200L, 1 * 200L);
@@ -210,57 +220,64 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 
 			// Support initialize
 			this.support = new Support();
-
-			Class[] argst = new Class[3];
-			argst[0] = Class.class;
-			argst[1] = String.class;
-			argst[2] = int.class;
-			
-			Class[] argst2 = new Class[4];
-			argst2[0] = int.class;
-			argst2[1] = String.class;
-			argst2[2] = Class.class;
-			argst2[3] = String.class;
-			
-			//int,string,class,string
-			
-			//ALT = class,string,int
-			try {
-				Method ab = net.minecraft.server.v1_12_R1.EntityTypes.class.getDeclaredMethod("a", argst2);
-			} catch (NoSuchMethodException e1) {
-				isNPCDisabled = true;
-			} catch (SecurityException e1) {
-				isNPCDisabled = true;
-			}
-
+			/*
+			 * Class[] argst = new Class[3];
+			 * argst[0] = Class.class;
+			 * argst[1] = String.class;
+			 * argst[2] = int.class;
+			 * 
+			 * Class[] argst2 = new Class[4];
+			 * argst2[0] = int.class;
+			 * argst2[1] = String.class;
+			 * argst2[2] = Class.class;
+			 * argst2[3] = String.class;
+			 * 
+			 * //int,string,class,string
+			 * 
+			 * //ALT = class,string,int
+			 * try {
+			 * Method ab =
+			 * net.minecraft.server.v1_12_R1.EntityTypes.class.getDeclaredMethod("a",
+			 * argst2);
+			 * } catch (NoSuchMethodException e1) {
+			 * isNPCDisabled = true;
+			 * } catch (SecurityException e1) {
+			 * isNPCDisabled = true;
+			 * }
+			 */
 			if (!isNPCDisabled) {
-				try {
-					@SuppressWarnings("rawtypes")
-					Class[] args = new Class[3];
-					args[0] = Class.class;
-					args[1] = String.class;
-					args[2] = int.class;
-					
-					Class[] args2 = new Class[4];
-					args2[0] = int.class;
-					args2[1] = String.class;
-					args2[2] = Class.class;
-					args2[3] = String.class;
-
-					Method a = net.minecraft.server.v1_12_R1.EntityTypes.class.getDeclaredMethod("a", args2);
-					a.setAccessible(true);
-						
-					//Old Version, look for the function which adds an Entity to the list
-					//a.invoke(a, CustomZombie.class, "Zombie", 54);
-					//a.invoke(a, CustomSkeleton.class, "Skeleton", 51);
-						
-					a.invoke(a,54,"zombie",CustomZombie.class,"Zombie");
-					a.invoke(a,54,"skeleton",CustomSkeleton.class,"Skeleton");
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-					this.setEnabled(false);
-				}
+				/*
+				 * try {
+				 * 
+				 * @SuppressWarnings("rawtypes")
+				 * Class[] args = new Class[3];
+				 * args[0] = Class.class;
+				 * args[1] = String.class;
+				 * args[2] = int.class;
+				 * 
+				 * Class[] args2 = new Class[4];
+				 * args2[0] = int.class;
+				 * args2[1] = String.class;
+				 * args2[2] = Class.class;
+				 * args2[3] = String.class;
+				 * 
+				 * Method a =
+				 * net.minecraft.server.v1_12_R1.EntityTypes.class.getDeclaredMethod("a",
+				 * args2);
+				 * a.setAccessible(true);
+				 * 
+				 * //Old Version, look for the function which adds an Entity to the list
+				 * //a.invoke(a, CustomZombie.class, "Zombie", 54);
+				 * //a.invoke(a, CustomSkeleton.class, "Skeleton", 51);
+				 * 
+				 * a.invoke(a,54,"zombie",CustomZombie.class,"Zombie");
+				 * a.invoke(a,54,"skeleton",CustomSkeleton.class,"Skeleton");
+				 * 
+				 * } catch (Exception e) {
+				 * e.printStackTrace();
+				 * this.setEnabled(false);
+				 * }
+				 */
 			} else {
 				log.warning("[HerobrineAI] Custom NPCs have been disabled. (Incompatibility error!)");
 			}
@@ -270,6 +287,27 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 			log.warning("[HerobrineAI] *****************************************");
 			this.setEnabled(false);
 		}
+	}
+
+	private FileConfiguration createCustomConfig(String file) {
+		File customConfigFile = new File(HerobrineAI.pluginCore.getDataFolder(), file);
+		if (!customConfigFile.exists()) {
+			customConfigFile.getParentFile().mkdirs();
+			saveResource(file, false);
+		}
+
+		YamlConfiguration customConfig = new YamlConfiguration();
+		try {
+			customConfig.load(customConfigFile);
+		} catch (IOException | InvalidConfigurationException e) {
+			e.printStackTrace();
+		}
+		/*
+		 * User Edit:
+		 * Instead of the above Try/Catch, you can also use
+		 * YamlConfiguration.loadConfiguration(customConfigFile)
+		 */
+		return customConfig;
 	}
 
 	public void onDisable() {
@@ -289,6 +327,8 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 			aicore.disableAll();
 			log.info("[HerobrineAI] Plugin disabled!");
 		}
+
+		NPCman.removeAll();
 
 	}
 
@@ -313,10 +353,7 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 	}
 
 	public void HerobrineSpawn(Location loc) {
-		HerobrineNPC = (HumanNPC) NPCman.spawnHumanNPC(ChatColor.WHITE + "Herobrine", loc);
-		HerobrineNPC.getBukkitEntity().setMetadata("NPC", new FixedMetadataValue(this, true));
-		HerobrineEntityID = HerobrineNPC.getBukkitEntity().getEntityId();
-
+		HerobrineNPC = NPCman.spawnHumanNPC(ChatColor.WHITE + "Herobrine", loc);
 	}
 
 	public void HerobrineRemove() {
@@ -325,10 +362,6 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 		HerobrineNPC = null;
 		NPCman.removeAll();
 
-	}
-
-	public ConfigDB getConfigDB() {
-		return this.configdb;
 	}
 
 	public String getVersionStr() {
@@ -349,31 +382,33 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 		boolean creativeCheck = true;
 		boolean ignoreCheck = true;
 
-		if (!configdb.AttackOP && player.isOp()) {
+		//if (!configdb.AttackOP && player.isOp()) {
+		if (!config.getBoolean("config.AttackOP") && player.isOp()) {
 			opCheck = false;
-
 		}
-		
-		if (!configdb.AttackCreative && player.getGameMode() == GameMode.CREATIVE) {
+
+		//if (!configdb.AttackCreative && player.getGameMode() == GameMode.CREATIVE) {
+		if (!config.getBoolean("config.AttackCreative") && player.getGameMode() == GameMode.CREATIVE) {
 			creativeCheck = false;
 		}
-		
-		if (configdb.UseIgnorePermission && player.hasPermission("hb-ai.ignore")) {
+
+		//if (configdb.UseIgnorePermission && player.hasPermission("hb-ai.ignore")) {
+		if (config.getBoolean("config.UseIgnorePermission") && player.hasPermission("hb-ai.ignore")) {			
 			ignoreCheck = false;
 		}
 
 		if (opCheck && creativeCheck && ignoreCheck) {
 			return true;
 		} else {
-		
-			if(sender == null){			
+
+			if (sender == null) {
 				if (!opCheck)
 					log.info("[HerobrineAI] Player is an OP.");
 				else if (!creativeCheck)
 					log.info("[HerobrineAI] Player is in creative mode.");
 				else if (!ignoreCheck)
-					log.info("[HerobrineAI] Player has ignore permission.");			
-			}else{
+					log.info("[HerobrineAI] Player has ignore permission.");
+			} else {
 				if (!opCheck)
 					sender.sendMessage(ChatColor.RED + "[HerobrineAI] Player is an OP.");
 				else if (!creativeCheck)
@@ -381,28 +416,34 @@ public class HerobrineAI extends JavaPlugin implements Listener {
 				else if (!ignoreCheck)
 					sender.sendMessage(ChatColor.RED + "[HerobrineAI] Player has ignore permission.");
 			}
-			
+
 			return false;
 		}
 
 	}
 
 	public boolean canAttackPlayerNoMSG(Player player) {
-		
+
 		boolean opCheck = true;
 		boolean creativeCheck = true;
 		boolean ignoreCheck = true;
 
-		if (!configdb.AttackOP && player.isOp()) {
-			opCheck = false;	
+		//if (!configdb.AttackOP && player.isOp()) {
+		if (!config.getBoolean("config.AttackOP") && player.isOp()) {
+			opCheck = false;
+			System.out.println("1");
 		}
-		
-		if (!configdb.AttackCreative && player.getGameMode() == GameMode.CREATIVE) {
+
+		//if (!configdb.AttackCreative && player.getGameMode() == GameMode.CREATIVE) {
+		if (!config.getBoolean("config.AttackCreative") && player.getGameMode() == GameMode.CREATIVE) {			
 			creativeCheck = false;
+			System.out.println("2");
 		}
-		
-		if (configdb.UseIgnorePermission && player.hasPermission("hb-ai.ignore")) {
+
+		//if (configdb.UseIgnorePermission && player.hasPermission("hb-ai.ignore")) {
+		if (config.getBoolean("config.UseIgnorePermission") && player.hasPermission("hb-ai.ignore")) {				
 			ignoreCheck = false;
+			System.out.println("3");
 		}
 
 		if (opCheck && creativeCheck && ignoreCheck) {

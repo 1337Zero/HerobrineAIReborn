@@ -6,6 +6,7 @@ import java.util.Random;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.data.Powerable;
 import org.jakub1221.herobrineai.HerobrineAI;
 import org.jakub1221.herobrineai.Utils;
 import org.jakub1221.herobrineai.AI.*;
@@ -18,19 +19,19 @@ public class BuildCave extends Core {
 
 	public CoreResult CallCore(Object[] data) {
 		if (data.length == 2) {
-			return BuildCave((Location) data[0], true);
+			return buildCave((Location) data[0], true);
 		}
-		return BuildCave((Location) data[0]);
+		return buildCave((Location) data[0]);
 	}
 
-	public CoreResult BuildCave(Location loc) {
+	public CoreResult buildCave(Location loc) {
 
-		if (HerobrineAI.getPluginCore().getConfigDB().BuildStuff == true) {
+		if (HerobrineAI.getPluginCore().config.getBoolean("config.BuildStuff") == true) {
 			if (HerobrineAI.getPluginCore().getSupport().checkBuild(loc)) {
 				if (loc.getBlockY() < 60) {
 
 					int chance = Utils.getRandomGen().nextInt(100);
-					if (chance > (100 - HerobrineAI.getPluginCore().getConfigDB().CaveChance)) {
+					if (chance > (100 - HerobrineAI.getPluginCore().config.getInt("config.CaveChance"))) {
 						AICore.log.info("Creating cave...");
 
 						GenerateCave(loc);
@@ -52,7 +53,7 @@ public class BuildCave extends Core {
 
 	}
 
-	public CoreResult BuildCave(Location loc, boolean cmd) {
+	public CoreResult buildCave(Location loc, boolean cmd) {
 
 		if (HerobrineAI.getPluginCore().getSupport().checkBuild(loc)) {
 			if (loc.getBlockY() < 60) {
@@ -143,7 +144,10 @@ public class BuildCave extends Core {
 		Random randgen = Utils.getRandomGen();
 		int chance = randgen.nextInt(100);
 		if (chance > 70) {
-			world.getBlockAt(x, y, z).setType(Material.REDSTONE_TORCH_ON);
+			world.getBlockAt(x, y, z).setType(Material.REDSTONE_TORCH);
+			Powerable power = (Powerable)world.getBlockAt(x, y, z).getBlockData();
+			power.setPowered(true);
+			world.getBlockAt(x, y, z).setBlockData(power);
 		}
 	}
 

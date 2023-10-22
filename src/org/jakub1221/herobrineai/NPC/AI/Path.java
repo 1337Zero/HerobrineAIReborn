@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.jakub1221.herobrineai.HerobrineAI;
 import org.jakub1221.herobrineai.Utils;
 
@@ -26,12 +27,12 @@ public class Path {
 		
 		x = _x;
 		z = _z;
-		if ((x - PluginCore.HerobrineNPC.getBukkitEntity().getLocation().getX()) < 0) {
+		if ((x - PluginCore.HerobrineNPC.getEntity().getLocation().getX()) < 0) {
 			xNegative = true;
 		} else {
 			xNegative = false;
 		}
-		if ((z - PluginCore.HerobrineNPC.getBukkitEntity().getLocation().getZ()) < 0) {
+		if ((z - PluginCore.HerobrineNPC.getEntity().getLocation().getZ()) < 0) {
 			zNegative = true;
 		} else {
 			zNegative = false;
@@ -42,18 +43,18 @@ public class Path {
 		if (stepNow <= maxSteps) {
 			if (!isCompleted) {
 
-				if ((x - PluginCore.HerobrineNPC.getBukkitEntity().getLocation().getX()) < 0) {
+				if ((x - PluginCore.HerobrineNPC.getEntity().getLocation().getX()) < 0) {
 					xNegative = true;
 				} else {
 					xNegative = false;
 				}
-				if ((z - PluginCore.HerobrineNPC.getBukkitEntity().getLocation().getZ()) < 0) {
+				if ((z - PluginCore.HerobrineNPC.getEntity().getLocation().getZ()) < 0) {
 					zNegative = true;
 				} else {
 					zNegative = false;
 				}
 				
-				Location loc = PluginCore.HerobrineNPC.getBukkitEntity().getLocation();
+				Location loc = PluginCore.HerobrineNPC.getEntity().getLocation();
 				World world = loc.getWorld();
 				
 				if (loc.getBlockX() > (int) x - 1 && loc.getBlockX() < (int) x + 1 && loc.getBlockZ() > (int) z - 1
@@ -93,7 +94,7 @@ public class Path {
 					}
 				}
 
-				Location newloc = PluginCore.HerobrineNPC.getBukkitEntity().getLocation();
+				Location newloc = PluginCore.HerobrineNPC.getEntity().getLocation();
 
 				if (canGoX) {
 					newloc.setX(newloc.getX() + pre_finalX);
@@ -113,9 +114,10 @@ public class Path {
 				if (world.getBlockAt(newloc).getType().isSolid()) {
 
 					newloc.setY(newloc.getWorld().getHighestBlockYAt(newloc) + 1.5f);
-					PluginCore.HerobrineNPC.lookAtPoint(newloc);
+					PluginCore.HerobrineNPC.faceLocation(newloc);
 					newloc.setY(newloc.getWorld().getHighestBlockYAt(newloc));
-					PluginCore.HerobrineNPC.moveTo(newloc);
+					//PluginCore.HerobrineNPC.moveTo(newloc);
+					PluginCore.HerobrineNPC.teleport(newloc,TeleportCause.PLUGIN);
 				}
 				
 				stepNow++;
@@ -125,10 +127,12 @@ public class Path {
 			if (new Random().nextInt(7) == 3) {
 
 				int yaw = Utils.getRandomGen().nextInt(360);
-
-				PluginCore.HerobrineNPC.setYaw(yaw);
-				PluginCore.HerobrineNPC.setYawA(yaw);
-				PluginCore.HerobrineNPC.setPitch(0);
+				PluginCore.HerobrineNPC.getEntity().getLocation().setYaw(yaw);
+				//PluginCore.HerobrineNPC.setYaw(yaw);
+				//PluginCore.HerobrineNPC.setYawA(yaw);
+				PluginCore.HerobrineNPC.getEntity().getLocation().setYaw(yaw);
+				//PluginCore.HerobrineNPC.setPitch(0);
+				PluginCore.HerobrineNPC.getEntity().getLocation().setPitch(0);
 
 			}
 		}

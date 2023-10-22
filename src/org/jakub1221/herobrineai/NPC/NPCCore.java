@@ -1,190 +1,79 @@
 package org.jakub1221.herobrineai.NPC;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
-import net.minecraft.server.v1_12_R1.Entity;
-import net.minecraft.server.v1_12_R1.EntityPlayer;
-import net.minecraft.server.v1_12_R1.MinecraftServer;
-import net.minecraft.server.v1_12_R1.PacketPlayOutNamedEntitySpawn;
-import net.minecraft.server.v1_12_R1.PacketPlayOutPlayerInfo;
-import net.minecraft.server.v1_12_R1.PlayerConnection;
-import net.minecraft.server.v1_12_R1.PlayerInteractManager;
-import net.minecraft.server.v1_12_R1.WorldServer;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.World;
-import org.bukkit.craftbukkit.v1_12_R1.CraftServer;
-import org.bukkit.craftbukkit.v1_12_R1.CraftWorld;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
+import org.bukkit.Location; 
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventException;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.world.ChunkLoadEvent;
-import org.bukkit.event.world.ChunkUnloadEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jakub1221.herobrineai.HerobrineAI;
-import org.jakub1221.herobrineai.NPC.Entity.HumanEntity;
-import org.jakub1221.herobrineai.NPC.Entity.HumanNPC;
-import org.jakub1221.herobrineai.NPC.NMS.BServer;
-import org.jakub1221.herobrineai.NPC.NMS.BWorld;
-import org.jakub1221.herobrineai.NPC.Network.NetworkCore;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
+
+import net.citizensnpcs.api.CitizensAPI;
+import net.citizensnpcs.api.npc.NPC;
+import net.citizensnpcs.trait.SkinTrait;
+
 
 public class NPCCore {
 
-	private ArrayList<HumanNPC> npcs = new ArrayList<HumanNPC>();
-	private BServer server;
+	private ArrayList<NPC> npcs = new ArrayList<NPC>();
 	private int taskid;
-	private Map<World, BWorld> bworlds = new HashMap<World, BWorld>();
-	private NetworkCore networkCore;
 	public static JavaPlugin plugin;
 	public boolean isInLoaded = false;
-	private int lastID = 0;
-
-	private GameProfile HerobrineGameProfile = getHerobrineGameProfile();
-
-	private GameProfile getHerobrineGameProfile() {
-		GameProfile profile = new GameProfile(
-											  UUID.fromString(HerobrineAI.getPluginCore().getConfigDB().HerobrineUUID),
-											  HerobrineAI.getPluginCore().getConfigDB().HerobrineName
-											  );
-		
-		Property textures = new Property("textures",
-				"eyJ0aW1lc3RhbXAiOjE0MjE0ODczMzk3MTMsInByb2ZpbGVJZCI6ImY4NGM2YTc5MGE0ZTQ1ZTA4NzliY2Q0OWViZDRjNGUyIiwicHJvZmlsZU5hbWUiOiJIZXJvYnJpbmUiLCJpc1B1YmxpYyI6dHJ1ZSwidGV4dHVyZXMiOnsiU0tJTiI6eyJ1cmwiOiJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk4YjdjYTNjN2QzMTRhNjFhYmVkOGZjMThkNzk3ZmMzMGI2ZWZjODQ0NTQyNWM0ZTI1MDk5N2U1MmU2Y2IifX19",
-				"Edb1R3vm2NHUGyTPaOdXNQY9p5/Ez4xButUGY3tNKIJAzjJM5nQNrq54qyFhSZFVwIP6aM4Ivqmdb2AamXNeN0KgaaU/C514N+cUZNWdW5iiycPytfh7a6EsWXV4hCC9B2FoLkbXuxs/KAbKORtwNfFhQupAsmn9yP00e2c3ZQmS18LWwFg0vzFqvp4HvzJHqY/cTqUxdlSFDrQe/4rATe6Yx6v4zbZN2sHbSL+8AwlDDuP2Xr4SS6f8nABOxjSTlWMn6bToAYiymD+KUPoO0kQJ0Uw/pVXgWHYjQeM4BYf/FAxe8Bf1cP8S7VKueULkOxqIjXAp85uqKkU7dR/s4M4yHm6fhCOCLSMv6hi5ewTaFNYyhK+NXPftFqHcOxA1LbrjOe6NyphF/2FI79n90hagxJpWwNPz3/8I5rnGbYwBZPTsTnD8PszgQTNuWSuvZwGIXPIp9zb90xuU7g7VNWjzPVoOHfRNExEs7Dn9pG8CIA/m/a8koWW3pkbP/AMMWnwgHCr/peGdvF5fN+hJwVdpbfC9sJfzGwA7AgXG/6yqhl1U7YAp/aCVM9bZ94sav+kQghvN41jqOwy4F4i/swc7R4Fx2w5HFxVY3j7FChG7iuhqjUclm79YNhTG0lBQLiZbN5FmC9QgrNHRKlzgSZrXHWoG3YXFSqfn4J+Om9w=");
-		
-		profile.getProperties().put(textures.getName(), textures);
-		
-		return profile;
-	}
 
 	public NPCCore(JavaPlugin plugin) {
-		
-		server = BServer.getInstance();
-		
-		networkCore = new NetworkCore();
-		
-		
+
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(HerobrineAI.getPluginCore(), new Runnable() {
 			@Override
 			public void run() {
-				final ArrayList<HumanNPC> toRemove = new ArrayList<HumanNPC>();
-				for (final HumanNPC humanNPC : npcs) {
+				final ArrayList<NPC> toRemove = new ArrayList<NPC>();
+				for (final NPC humanNPC : npcs) {
 					final Entity entity = humanNPC.getEntity();
-					if (entity.dead) {
+					if (entity.isDead()) {
 						toRemove.add(humanNPC);
 					}
 				}
-				for (final HumanNPC n : toRemove) {
+				for (final NPC n : toRemove) {
 					npcs.remove(n);
 				}
 			}
 		}, 1L, 1L);
 		
-		this.HerobrineGameProfile = getHerobrineGameProfile();
 	}
 
 	public void removeAll() {
-		for (HumanNPC humannpc : npcs) {
+		for (NPC humannpc : npcs) {
 			if (humannpc != null) {
-				humannpc.removeFromWorld();
+				humannpc.destroy();
 			}
 		}
 		npcs.clear();
 	}
 
-	public BWorld getBWorld(World world) {
-		BWorld bworld = bworlds.get(world);
-		if (bworld != null) {
-			return bworld;
-		}
-		bworld = new BWorld(world);
-		bworlds.put(world, bworld);
-		return bworld;
-	}
 
 	public void DisableTask() {
 		Bukkit.getServer().getScheduler().cancelTask(taskid);
 	}
 
-	private class WorldL implements Listener {
-		@SuppressWarnings("unused")
-		@EventHandler
-		public void onChunkLoad(ChunkLoadEvent event) throws EventException {
-			for (HumanNPC humannpc : npcs) {
-				if (humannpc != null
-						&& event.getChunk() == humannpc.getBukkitEntity().getLocation().getBlock().getChunk()) {
 
-					if (isInLoaded == false) {
-						BWorld world = getBWorld(event.getWorld());
+	public NPC spawnHumanNPC(String name, Location l) {
+		NPC npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, name); 
+		SkinTrait trait = npc.getOrAddTrait(SkinTrait.class);
+		trait.setSkinPersistent("Herobrine", "GvMJvqChiEY6d5TUcQj5IBwwCgomRTZBbtOwVieOJN8ULbL/QYZgwWnvbqGz+eZYWgyPy5zy0fK5fcDM5s3FVPlFtW60iazVE1UYfSSROp2lO++U/kEBjgV9RX8gDfDoC/CF/jsj4FAoHoYkK/qZ3kKAx4KCNc3tLwud6hVFbpxbE2qaUiXHsOATx0mLolk8C+65NgebbYuNVkF1fYGUfh5S7fTxtoIS3wy30MsqaZzdV6x8ioATjfBnO/DKc64bNl5Ii0u5rpivcIvpqytynKFeylvBpeT5uNhtRfbjM6Ezuyka2f/XCZ9d82DB5VfC9E6vNcYu45JHZqOb7tvOux51KtoMtkli7tmm9pfmp/krGkVKNgiJRjwXctKJ6WtLgn8P/Uii6UNvHADeApLITMFrfzlIzIbyk3stlsVwoZBXPn34JWgJzEMXm052xZc4spHyZI4a9/HuCeaPoWK/6+Wgd40eN1gCH30Pu2j+OdXUzConQPT4/xMuzEWlB5iaY9TIay43ny4l9Zuc6m1kOkjTKwBEN59wWfXTQkDC9xnZRs4YkQaY239d1tNRBS+5SfQls8IKBVEaaXTTY1DDre5ovUR69Hq+GZaDMawGdWutlRVzSdomiZb85Aa6hHYEw5WJyToM4wZPxunLLoDoj1S/SCeZyH9I/sQh7wBOK0w=", "ewogICJ0aW1lc3RhbXAiIDogMTY3MjE0NjkwNDc5MCwKICAicHJvZmlsZUlkIiA6ICJiMjdjMjlkZWZiNWU0OTEyYjFlYmQ5NDVkMmI2NzE0YSIsCiAgInByb2ZpbGVOYW1lIiA6ICJIRUtUMCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xMGZiMDVlNjBmNDZiZTUwMzI1MzllODNhOWU4Y2UwNjZkYmJhNWFmODU0ZGUxYjg2NDYzMGFjYmM4ODRlZjU2IgogICAgfQogIH0KfQ==");
+		npc.spawn(l);
 
-						isInLoaded = true;
-					}
-				}
-			}
-
-		}
-
-		@EventHandler
-		public void onChunkUnload(ChunkUnloadEvent event) {
-			for (HumanNPC humannpc : npcs) {
-				if (humannpc != null
-						&& event.getChunk() == humannpc.getBukkitEntity().getLocation().getBlock().getChunk()) {
-
-				}
-			}
-		}
+		return npc;
 	}
 
-	public HumanNPC spawnHumanNPC(String name, Location l) {
-		lastID++;
-		int id = lastID;
-		return spawnHumanNPC(name, l, id);
-	}
+	public NPC getHumanNPC(int id) {
 
-	public HumanNPC spawnHumanNPC(String name, Location l, int id) {
-
-		final BWorld world = server.getWorld(l.getWorld().getName());
-		final HumanEntity humanEntity = new HumanEntity(this, world, HerobrineGameProfile, new PlayerInteractManager(world.getWorldServer()));		
-		humanEntity.setLocation(l.getX(), l.getY(), l.getZ(), l.getYaw(), l.getPitch());
-		world.getWorldServer().addEntity(humanEntity);
-		final HumanNPC humannpc = new HumanNPC(humanEntity, id);
-		npcs.add(humannpc);		
-		
-		/*for(Player player : Bukkit.getOnlinePlayers()){
-			PlayerConnection con = ((CraftPlayer)player).getHandle().playerConnection;
-			con.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER,humanEntity));
-			con.sendPacket(new PacketPlayOutNamedEntitySpawn(humanEntity));
-		}*/
-		return humannpc;
-	}
-
-	public HumanNPC getHumanNPC(int id) {
-
-		for (HumanNPC n : npcs) {
-			if (n.getID() == id) {
+		for (NPC n : npcs) {
+			if (n.getId() == id) {
 				return n;
 			}
 		}
 
 		return null;
 	}
-
-	public BServer getServer() {
-		return server;
-	}
-
-	public NetworkCore getNetworkCore() {
-		return networkCore;
-	}
-
 }

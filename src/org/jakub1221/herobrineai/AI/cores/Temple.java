@@ -175,14 +175,14 @@ public class Temple extends Core {
 
 			// Main blocks
 
-			new StructureLoader(HerobrineAI.getPluginCore().getInputStreamData("/res/temple.yml")).Build(loc.getWorld(),
+			new StructureLoader(HerobrineAI.pluginCore.schem_temple).Build(loc.getWorld(),
 					MainX, MainY, MainZ);
 			loc.getWorld().getBlockAt(MainX + 6, MainY + 0, MainZ + 2).setType(Material.CHEST);
 			// Mob spawn
 			if (!HerobrineAI.isNPCDisabled) {
-				if (HerobrineAI.getPluginCore().getConfigDB().UseNPC_Guardian) {
+				if (HerobrineAI.getPluginCore().config.getBoolean("config.UseNPC_Guardian")) {
 					Location mobloc = new Location(loc.getWorld(), MainX + 6, MainY + 0, MainZ + 4);
-					for (int i = 1; i <= HerobrineAI.getPluginCore().getConfigDB().npc.getInt("npc.Guardian.SpawnCount"); i++) {
+					for (int i = 1; i <= HerobrineAI.getPluginCore().getConfig().getInt("npc.Guardian.SpawnCount"); i++) {
 						HerobrineAI.getPluginCore().getEntityManager().spawnCustomZombie(mobloc, MobType.ARTIFACT_GUARDIAN);
 					}
 				}
@@ -193,34 +193,34 @@ public class Temple extends Core {
 				ItemStack item = null;
 				ArrayList<String> newLore = new ArrayList<String>();
 				
-				if (chance < 4 && HerobrineAI.getPluginCore().getConfigDB().UseArtifactBow) {
+				if (chance < 4 && HerobrineAI.getPluginCore().getConfig().getBoolean("config.UseArtifacts.Bow")) {
 					
 					item = new ItemStack(Material.BOW);
-					newLore.add("Herobrine�s artifact");
+					newLore.add("Herobrine artifact");
 					newLore.add("Bow of Teleporting");
 					item = ItemName.setNameAndLore(item, "Bow of Teleporting", newLore);
 					item.addEnchantment(Enchantment.ARROW_FIRE, 1);
 					item.addEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
 					
-				} else if (chance < 8 && HerobrineAI.getPluginCore().getConfigDB().UseArtifactSword) {
+				} else if (chance < 8 && HerobrineAI.getPluginCore().getConfig().getBoolean("config.UseArtifacts.Sword")) {
 					
 					item = new ItemStack(Material.DIAMOND_SWORD);
-					newLore.add("Herobrine�s artifact");
+					newLore.add("Herobrine artifact");
 					newLore.add("Sword of Lighting");
 					item = ItemName.setNameAndLore(item, "Sword of Lighting", newLore);
 					item.addEnchantment(Enchantment.KNOCKBACK, 2);
 					item.addEnchantment(Enchantment.DAMAGE_ALL, 2);
 					item.addEnchantment(Enchantment.DURABILITY, 3);
 					
-				} else if (chance < 12 && HerobrineAI.getPluginCore().getConfigDB().UseArtifactApple) {
+				} else if (chance < 12 && HerobrineAI.getPluginCore().getConfig().getBoolean("config.UseArtifacts.Apple")) {
 					
 					item = new ItemStack(Material.GOLDEN_APPLE);
-					newLore.add("Herobrine�s artifact");
+					newLore.add("Herobrine artifact");
 					newLore.add("Apple of Death");
 					item = ItemName.setNameAndLore(item, "Apple of Death", newLore);
 
 				} else {
-					if (HerobrineAI.getPluginCore().getConfigDB().UseAncientSword) {
+					if (HerobrineAI.getPluginCore().getConfig().getBoolean("config.UseAncientSword")) {
 						item = HerobrineAI.getPluginCore().getAICore().createAncientSword();
 						item.addEnchantment(Enchantment.KNOCKBACK, 2);
 						item.addEnchantment(Enchantment.DAMAGE_ALL, 2);

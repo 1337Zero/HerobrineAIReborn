@@ -1,11 +1,10 @@
 package org.jakub1221.herobrineai.AI.cores;
 
-import java.util.Random;
-
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.data.Powerable;
 import org.bukkit.entity.Player;
 import org.jakub1221.herobrineai.HerobrineAI;
 import org.jakub1221.herobrineai.Utils;
@@ -29,7 +28,7 @@ public class Pyramid extends Core {
 
 	// TODO Change this nonsense
 	public CoreResult FindPlace(Chunk chunk) {
-		if (PluginCore.getConfigDB().BuildPyramids) {
+		if (HerobrineAI.getPluginCore().config.getBoolean("config.BuildPyramids")) {
 
 			Location loc = chunk.getBlock(2, 0, 2).getLocation();
 			loc = loc.getWorld().getHighestBlockAt(loc).getLocation();
@@ -91,7 +90,7 @@ public class Pyramid extends Core {
 	}
 
 	public CoreResult FindPlace(Player player) {
-		if (PluginCore.getConfigDB().BuildPyramids) {
+		if (HerobrineAI.getPluginCore().config.getBoolean("config.BuildPyramids")) {
 
 			Location loc = (Location) player.getLocation();
 
@@ -213,7 +212,10 @@ public class Pyramid extends Core {
 			// Level 3
 			world.getBlockAt(X, Y + 2, Z).setType(mainMat);
 			// Level 4
-			world.getBlockAt(X, Y + 3, Z).setType(Material.REDSTONE_TORCH_ON);
+			world.getBlockAt(X, Y + 3, Z).setType(Material.REDSTONE_TORCH);
+			Powerable power = (Powerable)world.getBlockAt(X, Y + 3, Z).getBlockData();
+			power.setPowered(true);
+			world.getBlockAt(X, Y + 3, Z).setBlockData(power);
 
 		}
 

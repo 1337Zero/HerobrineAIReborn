@@ -2,24 +2,16 @@ package org.jakub1221.herobrineai.commands;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map.Entry;
 import java.util.logging.Logger;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jakub1221.herobrineai.HerobrineAI;
-import org.jakub1221.herobrineai.AI.AICore;
-import org.jakub1221.herobrineai.AI.Core.CoreType;
 
 public class CmdExecutor implements CommandExecutor {
-
-	@Deprecated
-	private HerobrineAI P_Core = null;
-
 	private Logger log = null;
 	private HashMap<String, SubCommand> subCommands = new HashMap<String, SubCommand>();
 	private String[] helpCommandOrder = {
@@ -27,8 +19,6 @@ public class CmdExecutor implements CommandExecutor {
 			"bury", "curse", "burn", "pyramid", "cave", "temple", "graveyard" };
 
 	public CmdExecutor(HerobrineAI p) {
-		log = p.log;
-
 		subCommands.put("reload", new CmdReload(p, log));
 		subCommands.put("cancel", new CmdCancel(p, log));
 		subCommands.put("attack", new CmdAttack(p, log));

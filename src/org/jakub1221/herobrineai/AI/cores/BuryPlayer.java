@@ -5,6 +5,8 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
+import org.bukkit.block.sign.Side;
+import org.bukkit.block.sign.SignSide;
 import org.bukkit.entity.Player;
 import org.jakub1221.herobrineai.HerobrineAI;
 import org.jakub1221.herobrineai.AI.Core;
@@ -81,12 +83,20 @@ public class BuryPlayer extends Core {
 		Location loc = new Location(world, X, Y, Z);
 		Location signloc = new Location(world, X, Y, Z - 2);
 		Block signblock = signloc.add(0, 0D, 0).getBlock();
-		signblock.setType(Material.SIGN_POST);
-		Sign sign = (Sign) signblock.getState();
-		sign.setLine(1, playername);
+		signblock.setType(Material.OAK_SIGN);
+
+		Sign sign = (Sign) signblock;
+		SignSide sideA = sign.getSide(Side.FRONT);
+		SignSide sideB = sign.getSide(Side.BACK);
+		sideA.setLine(1, "RIP");
+		sideA.setLine(2, playername);
+		
+		sideB.setLine(1, "RIP");
+		sideB.setLine(2, playername);
+		
 		sign.update();
-		loc.getWorld().getBlockAt(X, Y - 1, Z).setTypeIdAndData(98, (byte) 2, false);
-		loc.getWorld().getBlockAt(X, Y - 1, Z - 1).setTypeIdAndData(98, (byte) 2, false);
+		loc.getWorld().getBlockAt(X, Y - 1, Z).setType(Material.CRACKED_STONE_BRICKS);
+		loc.getWorld().getBlockAt(X, Y - 1, Z - 1).setType(Material.CRACKED_STONE_BRICKS);
 	}
 
 }

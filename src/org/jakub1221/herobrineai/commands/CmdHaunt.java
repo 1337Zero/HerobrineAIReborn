@@ -7,6 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.jakub1221.herobrineai.HerobrineAI;
 import org.jakub1221.herobrineai.AI.AICore;
+import org.jakub1221.herobrineai.AI.CoreResult;
 
 public class CmdHaunt extends SubCommand {
 
@@ -36,9 +37,9 @@ public class CmdHaunt extends SubCommand {
 				return true;
 			}
 			
-			if (AICore.isTarget == false) {			
-				plugin.getAICore().setHauntTarget(target);
-				sendMessage(player, ChatColor.RED + "[HerobrineAI] Herobrine is now haunting " + args[1] + "!");
+			if (AICore.isTarget == false) {		
+				CoreResult rs = plugin.getAICore().setHauntTarget(target);
+				sendMessage(player, ChatColor.RED + "[HerobrineAI] " + rs.getResultString());
 				
 			} else {
 				sendMessage(player,ChatColor.RED + "[HerobrineAI] Herobrine already has target! Use "
